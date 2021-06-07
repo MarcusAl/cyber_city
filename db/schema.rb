@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_143538) do
+ActiveRecord::Schema.define(version: 2021_06_07_144549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 2021_06_07_143538) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "diagnostics", force: :cascade do |t|
+    t.bigint "website_id", null: false
+    t.integer "score"
+    t.string "wss_test"
+    t.string "ss_test"
+    t.string "gdpr_comp_test"
+    t.string "pci_dss_test"
+    t.string "http_headers_test"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["website_id"], name: "index_diagnostics_on_website_id"
   end
 
   create_table "order_products", force: :cascade do |t|
@@ -85,17 +98,29 @@ ActiveRecord::Schema.define(version: 2021_06_07_143538) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "websites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_websites_on_user_id"
   end
 
   add_foreign_key "cart_products", "carts"
   add_foreign_key "cart_products", "products"
   add_foreign_key "carts", "users"
+  add_foreign_key "diagnostics", "websites"
   add_foreign_key "order_products", "orders"
   add_foreign_key "order_products", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
   add_foreign_key "reviews", "orders"
   add_foreign_key "reviews", "users"
+  add_foreign_key "websites", "users"
 end

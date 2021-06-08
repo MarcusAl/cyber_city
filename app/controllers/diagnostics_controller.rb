@@ -1,15 +1,14 @@
 class DiagnosticsController < ApplicationController
   def index
-    @website = Website.where(user_id: current_user)
+    @diagnostics = Diagnostic.all
   end
 
-  def show
-    @website = Website.find(params[:id])
-    @diagnostics = @website.diagnostic
+  def show 
+    @diagnostics = Diagnostic.find(params[:id])
   end
 
-  def new
-    @diagnostic = Diagnostic.new(secure_params)
+  def create
+    @url = params[:diagnostic][:url]
   end
 
   private

@@ -1,5 +1,6 @@
 class Diagnostic < ApplicationRecord
-  belongs_to :website
+  belongs_to :user
+  validates :url, presence: true
   validates :score, presence: true
   validates :wss_test, presence: true
   validates :ss_test, presence: true

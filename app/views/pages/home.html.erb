@@ -12,8 +12,8 @@
     <h4>Insert your URL below.</h4>
   </div>
   <div id="url-circle">
-    <% simple_form_for @diagnostic do |f| %>
-    <% f.input :url %>
-    <% end -%>
+    <%= render "shared/searchurl" %>
   </div>
 </div>
+
+

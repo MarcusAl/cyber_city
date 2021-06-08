@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% render 'shared/navbar' %>
+
+<div id="main-title">
+  <h1>DIAGNODE</h1>
+  <div id="slogan">
+    <h4>Making cyber security easy to handle for you and your business</h4>
+  </div>
+</div>
+<div>
+  <div class="url-sign text-right">
+    <h4>Check if your Website is safe?</h4>
+    <h4>Insert your URL below.</h4>
+  </div>
+  <div id="url-circle">
+    <% simple_form_for @diagnostic do |f| %>
+    <% f.input :url %>
+    <% end -%>
+  </div>
+</div>

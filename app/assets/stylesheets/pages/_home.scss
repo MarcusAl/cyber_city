@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap');
+
+body {
+  background-color: black;
+}
+
+#main-title {
+  color: white;
+  margin-top: 100px;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 250px;
+  }
+}
+
+#slogan {
+  width: 300px;
+  margin-left: 238px;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+}
+
+#url-circle {
+  background-color: black;
+  border: solid 2px white;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+}
+
+.url-sign {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 58%;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: white;
+  }
+}

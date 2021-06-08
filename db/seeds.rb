@@ -62,7 +62,7 @@ puts "Creating methods..."
 
 def rand_product(arr1, arr2)
   { name: rand_generator(arr1), description: rand_generator(arr2),
-    price: price_generator.round(2), rating: 5.0 }
+    price: price_generator.round(2)}
 end
 
 def rand_product_software_security(arr, arr2)

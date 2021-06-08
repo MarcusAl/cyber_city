@@ -31,6 +31,7 @@ body {
   width: 600px;
   height: 600px;
   border-radius: 50%;
+  position: relative;
 }
 
 .url-sign {
@@ -41,5 +42,58 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     color: white;
+  }
+}
+
+#search-form {
+  width: 90%;
+  position: absolute;
+  top: 37%;
+  right: 5%;
+  form {
+    margin: 0 auto;
+    padding: 0;
+  }
+  input {
+    padding: 32px;
+    border-radius: 30px;
+  }
+}
+
+.search-submit {
+  padding: 0;
+  width: fit-content;
+  margin: 0 auto;
+   .search-submit-button {
+    text-decoration: none;
+    padding: 0;
+  }
+}
+
+.news-container {
+  width: 75%;
+  margin: 150px auto;
+  display: flex;
+}
+
+.news-card {
+  width: 700px;
+  height: 700px;
+  background-color: #ffc288;
+  h1 {
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 75px;
+  }
+}
+
+.news-sign {
+  padding-left: 32px;
+  color: white;
+  width: 250px;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
   }
 }

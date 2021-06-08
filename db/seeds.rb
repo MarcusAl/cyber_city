@@ -11,7 +11,8 @@ puts "Starting Up..."
 
 def rand_user(arr1, arr2, arr3)
   arr = ("a".."z").to_a
-  { email: arr.sample + arr1.sample, first_name: arr2.sample, last_name: arr3.sample, password: '123456' }
+  arr_b = (1..100).to_a
+  { email: arr.sample + arr_b.sample.to_s + arr1.sample, first_name: arr2.sample, last_name: arr3.sample, password: '123456' }
 end
 
 emails = ['bigfish@gmail.com', 'serano@cloudtech.co.uk', 'wendylead@uppermanagement.com',
@@ -104,33 +105,37 @@ end
 puts "Creating Users With Products"
 
 # 40 Users with software security category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_software_security(product_names, product_description))
   user.products << product
   user.save!
 end
 
+puts "Processing...(1/4)"
+
 # 40 Users with gdpr category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_gdpr(product_names, product_description))
   user.products << product
   user.save!
 end
 
+puts "Processing...(2/4)"
+
 # 40 Users with dss category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_dss(product_names, product_description))
   user.products << product
   user.save!
 end
 
-puts "Processing..."
+puts "Processing...(3/4)"
 
 # 40 Users with http category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_http(product_names, product_description))
   user.products << product
@@ -138,17 +143,17 @@ puts "Processing..."
 end
 
 # 40 Users with content security category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_content_security(product_names, product_description))
   user.products << product
   user.save!
 end
 
-puts "Processing..."
+puts "Processing...(4/4)"
 
 # 40 Users with others category
-5.times do
+40.times do
   user = User.new(rand_user(emails, first_names, last_names))
   product = Product.new(rand_product_others(product_names, product_description))
   user.products << product

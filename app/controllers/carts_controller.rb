@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def index
+  def show
     @cart = Cart.where(user_id: current_user)
   end
 end

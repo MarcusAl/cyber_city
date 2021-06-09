@@ -1,8 +1,10 @@
 <div id="search-form">
   <%= simple_form_for @diagnostic do |f| %>
-    <%= f.input :url, placeholder: "http://website.com" %>
-    <div class="search-submit">
-      <%= f.submit value: 'Run diagnostic', class: "btn btn-black text-white search-submit-button" %>
+    <div>
+      <%= f.input :url, placeholder: "http://website.com" %>
+    </div>
+    <div>
+      <%= f.submit value: 'Run diagnostic', class: "btn btn-light search-submit-button" %>
     </div>
   <% end %>
 </div>

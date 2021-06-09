@@ -6,7 +6,8 @@ body {
 }
 
 #main-banner {
-  width: 75%;
+  width: 87%;
+  height: 100vh;
   margin: 0 auto;
   margin-top: 100px;
 }
@@ -21,7 +22,7 @@ body {
 }
 
 #slogan {
-  width: 300px;
+  width: 500px;
   h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
@@ -29,14 +30,44 @@ body {
   }
 }
 
+#info-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.promo-block {
+width: 331px;
+height: 342px;
+justify-content: space-between;
+display: flex;
+height: auto;
+margin-bottom: 0;
+padding: 30px;
+flex-direction: column;
+align-items: flex-start;
+background-color: #fff;
+box-shadow: 6px 6px 20px 0 rgba(0,0,0,.2);
+}
+
+.das {
+  font-size: 30px;
+}
+
+.fas {
+width: auto;
+font-size: 80px;
+margin-bottom: 10px;
+}
+
 .search-container {
-  width: 75%;
-  margin: 150px auto;
+  width: 100%;
+  margin: 100px auto;
   display: flex;
 }
 
 #url-search {
-  background-color: #3c8dad;
+  background-color: #dddddd;
   border: solid 2px white;
   margin: 0 auto;
   width: 100%;
@@ -51,7 +82,7 @@ body {
 }
 
 .url-sign {
-  width: 320px;
+  width: 700px;
   padding-left: 24px;
   h4 {
     font-family: 'Montserrat', sans-serif;
@@ -83,14 +114,14 @@ body {
 }
 
 .news-container {
-  width: 75%;
+  width: 100%;
   margin: 150px auto;
 }
 
 .news-card {
   width: 100%;
   height: 600px;
-  background-color: #ffc288;
+  background-color: #dddddd;
   border: solid 2px white;
   h1 {
     padding: 16px;

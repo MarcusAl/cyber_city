@@ -1,5 +1,12 @@
 <h1>Products</h1>
 
-<% @products.each do |product| %>
-<%= product.name %>
-<% end %>
+<div class="container">
+    <% @products.each do |product| %>
+
+        <h5 class="border">
+            <%= product.name %>
+        </h5>
+         <%= link_to "Add product",  product_cart_products_path(product.id) %>
+        <br>
+    <% end %>
+</div>

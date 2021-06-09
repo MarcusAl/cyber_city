@@ -1,5 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% render 'shared/navbar' %>
 
-<%= render "shared/searchurl" %>
-
+<div id="main-banner">
+  <div class="banner-info">
+    <h1>DIAGNODE</h1>
+    <div id="slogan">
+      <h4>Making cyber security easy to handle for you and your business</h4>
+    </div>
+  </div>
+</div>
+<div class="search-container">
+  <div id="url-search">
+    <div>
+      <h1>Run Diagnostics</h1>
+      <div class="url-sign ">
+        <h4>Want to check if your Website is safe?</h4>
+        <br>
+        <h4>Insert your URL below.</h4>
+      </div>
+    </div>
+    <div>
+      <%= render "shared/searchurl" %>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="news-container">
+    <div class="news-card">
+      <h1>Cyber News</h1>
+      <div class="news-sign">
+        <h4>Learn more about cyber security, read some articles.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div>Contact us</div>
+   <div class="icons">
+    <i class="fab fa-facebook-square"></i>
+    <i class="fab fa-instagram-square"></i>
+    <i class="fab fa-twitter-square"></i>
+  </div>
+  <br>
+  <div>© 2021 Diagnode, Inc · Privacy · Terms · Sitemap · UK Modern Slavery Act · Company details
+  </div>
+</div>

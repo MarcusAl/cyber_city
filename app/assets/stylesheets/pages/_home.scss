@@ -1,1 +1,129 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap');
+
+body {
+  background-color: black;
+}
+
+#main-banner {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.banner-info {
+  color: white;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 150px;
+  }
+}
+
+#slogan {
+  width: 300px;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    padding-left: 5%;
+  }
+}
+
+.search-container {
+  width: 75%;
+  margin: 150px auto;
+  display: flex;
+}
+
+#url-search {
+  background-color: #3c8dad;
+  border: solid 2px white;
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
+  // border-radius: 50%;
+  h1 {
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 75px;
+  }
+}
+
+.url-sign {
+  width: 320px;
+  padding-left: 24px;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: white;
+  }
+}
+
+#search-form {
+  width: 80%;
+  margin-top: 32px;
+  form {
+    padding-left: 24px;
+    color: #3c8dad;
+  }
+  input {
+    padding: 32px;
+    width: 80%;
+  }
+   .search-submit-button {
+    text-decoration: none;
+    padding: 8px;
+    background-color: white;
+    width: 150px;
+  }
+  .search-bar {
+    display: inline-flex;
+  }
+}
+
+.news-container {
+  width: 75%;
+  margin: 150px auto;
+}
+
+.news-card {
+  width: 100%;
+  height: 600px;
+  background-color: #ffc288;
+  border: solid 2px white;
+  h1 {
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 75px;
+  }
+}
+
+.news-sign {
+  padding-left: 24px;
+  color: white;
+  width: 320px;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+}
+
+.footer {
+  padding: 32px;
+  border-top: solid 1px white;
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  .fab {
+    font-size: 32px;
+    transition: 0.2s ease-in-out;
+    margin-right: 6px;
+    margin-top: 6px;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

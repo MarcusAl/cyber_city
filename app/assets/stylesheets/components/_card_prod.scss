@@ -1,0 +1,160 @@
+
+.card-container-3 {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: row;
+    width: 100%;
+  }
+  
+  .product-card {
+    // overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 368px;
+    height: 368px;
+    border-radius: 30px;
+  }
+  
+  .product-card > img {
+    height: 368px;
+    border-radius: 30px;
+    width: 100%;
+  }
+  
+  .product-card-text {
+    text-align: center;
+  }
+  
+  .title1 {
+    font-size: 18px;
+    line-height: 5px;
+    max-height: 20px;
+    text-overflow: ellipsis;
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+    white-space: pre-line;
+  }
+  
+  
+  .large-product-card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://video-images.vice.com/_uncategorized/1537288697059-Coolest-Tennis-Courts-5.jpeg?resize=980:*");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    width: 100%;
+    height: 500px;
+  }
+  
+  .heading {
+    position: absolute;
+    top: 25%;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .heading h4 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-container-4 {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: row;
+  }
+  
+  .small-product-card {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 272px;
+    height: 272px;
+    border-radius: 30px;
+  }
+  
+  .small-product-card > img {
+    height: 272px;
+    border-radius: 30px;
+    width: 100%;
+  }
+  
+  
+  .icons {
+    display: block;
+    margin-left: 65px;
+    font-size: 25px
+  
+  }
+  
+  .inc {
+    margin-left: 65px;
+  }
+  
+  .btn-outline-primary {
+    margin-right: 65px;
+  }
+
+  #products-index-page {
+    display: flex;
+  }
+  
+  .products-index-container {
+    width: 55%;
+    flex-grow: 1;
+    
+  }
+  
+  .product-card-index-page {
+    display: flex;
+    margin: 8px;
+    position: relative;
+    border-top: solid 1px lightgrey;
+    padding-top: 16px;
+  }
+  
+  .product-image-index-page {
+    width: 35%;
+    img {
+      max-width:100%;
+      max-height:100%;
+      border-radius: 10px;
+    }
+  }
+  
+  .product-info-index-page {
+    width: 60%;
+    text-align: left;
+    margin: 8px;
+    margin-left: 16px;
+  }
+  
+  .product-price-index-page {
+    position: absolute;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+    p {
+      margin: 0;
+    }
+  }
+  
+  .filter-container {
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .filters {
+    display: block;
+    margin: 16px 0;
+  }

@@ -9,7 +9,7 @@
     </div>
         <div class="products-index-container">
             <% @products.each do |product| %>
-          
+        
             <div class="selected product-card-index-page <%= product.category %> category">
                 <a href="/products/<%= product.id %>", class="btn text-decoration-none ">
                 <% if product.photos.attached? %>
@@ -22,11 +22,16 @@
                 <% end %>
                 <div class="product-info-index-page">
                     <p><strong><%= product.name %></strong></p>
-                    <p><%= product.description %></p>
-                    <%= link_to "Add product",  product_cart_products_path(product), method: :post %>
+                    <p><%= product.description %></p> 
+            
                 </div>
                 <div class="product-price-index-page">
-                    <p><strong>£<%= product.price %></strong></p>
+                    <p><strong>£<%#= product.price %></strong></p> %>
+                    <h5 class="border">
+                    <%= product.name %> 
+                    </h5>
+                    <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
+                    <br>
                 </div>
                 </div>
             </a>
@@ -36,11 +41,5 @@
 </div>
 
 
-        <h5 class="border">
-            <%= product.name %>
-        </h5>
-         <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
-        <br>
-    <% end %>
-</div>
+  
 

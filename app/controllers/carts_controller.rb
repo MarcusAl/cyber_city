@@ -5,7 +5,9 @@ class CartsController < ApplicationController
     @cart_products = @cart.cart_products
     @total = 0
     @cart.products.each do |product|
+
       @total += product.price
+
     end
     @total
   end

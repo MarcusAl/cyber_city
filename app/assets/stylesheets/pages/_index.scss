@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  background-color: grey;
+}
+
 .main-page-container {
   max-width: 88%;
   margin: 100px auto;

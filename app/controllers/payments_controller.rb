@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
     @cart = current_user.cart
     @total = 0
     @cart.products.each do |product|
-      @total += product.price_cents
+      @total += product.price_cents.to_f / 100
     end
     @total
   end

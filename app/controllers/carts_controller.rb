@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     @cart_products = @cart.cart_products
     @total = 0
     @cart.products.each do |product|
-      @total += product.price_cents
+      @total += product.price_cents.to_f / 100
     end
     @total
   end
@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     line_items = @cart.products.map do |product|
       {
         name: product.name,
-        amount: product.price_cents * 100,
+        amount: product.price_cents,
         currency: 'gbp',
         quantity: 1
       }

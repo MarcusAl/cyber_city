@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-transparent">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-transparent border-bottom">
   <%= link_to "/", class: "navbar-brand" do %>
-    <p class="m-0 nav-link text-white"><i class="fas fa-robot pr-2"></i>Diagnode</p>
+    <p class="m-0 nav-link text-white"><i class="das fa-robot pr-2"></i>Diagnode</p>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,11 +11,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
-          <%= link_to "Marketplace", "#", class: "nav-link" %>
+          <%= link_to "Marketplace", "/products", class: "nav-link text-white" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -26,7 +23,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Marketplace", "#", class: "nav-link text-white" %>
+          <%= link_to "Marketplace", "/products", class: "nav-link text-white" %>
         </li>
         <li class="nav-item dropdown">
           <div id="LoginDropdown" class="dropdown-toggle bg-white p-2 rounded mr-3", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false">Login</div>

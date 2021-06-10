@@ -99,3 +99,4 @@ class DiagnosticsController < ApplicationController
     end
   end
 end
+

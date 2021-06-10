@@ -7,7 +7,7 @@ class CartsController < ApplicationController
     @cart.products.each do |product|
       @total += product.price_cents
     end
-    @total 
+    @total
   end
 
   def confirm
@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     line_items = @cart.products.map do |product|
       {
         name: product.name,
-        amount: product.price_cents,
+        amount: product.price_cents * 100,
         currency: 'gbp',
         quantity: 1
       }
@@ -30,15 +30,5 @@ class CartsController < ApplicationController
 
     @cart.update(checkout_session_id: session.id, state: :confirmed)
     redirect_to new_cart_payment_path(@cart)
-  end
-
-  def amount
-    @cart = current_user.cart
-    @cart_products = @cart.cart_products
-    num = 0
-    @cart_products.each do |product|
-      num += product.price
-    end
-    num
   end
 end

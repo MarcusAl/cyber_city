@@ -94,12 +94,11 @@ ActiveRecord::Schema.define(version: 2021_06_10_110701) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.float "price"
+    t.integer "price_cents", default: 0, null: false
     t.bigint "user_id", null: false
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 

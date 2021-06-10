@@ -3,23 +3,31 @@
     <%# Cart Image Here %>
     <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
     <div class="col">
-      <h1>Cart #<%= @cart.id %> <small><span class="badge badge-primary"><%= @cart.state %></span></small></h1>
+      <h1>Cart <small><span class="badge badge-primary"><%= @cart.state %></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date %></li>
+        <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
         <% @cart.products.each do |product| %>
-          <li><strong>PRODUCT</strong> <%= product.name %> [<%= humanized_money_with_symbol product.price_cents.to_f / 100 %>]</li>
+          <li><strong>PRODUCT</strong> <%= product.name %> [<%= humanized_money_with_symbol product.price %>]</li>
         <% end %>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @total %></li>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
+      <%# Delete A Product %>
+      <p>Total Products: <strong><%= @cart.products.length %></strong></p>
+        <% @cart_products.each do |cart_product| %>
+          <%= cart_product.product.name %>
+          <%= link_to "Delete", cart_product_path(cart_product), method: :delete %>
+        <% end %>
+      <%# Buttons %>
+      <div class="d-inline-flex justify-content-between">
+        <div class="col-4">
+          <%= link_to "Confirm", confirm_cart_path(@cart), method: :put %>
+        </div>
+        <div class="col-8">
+          <%= link_to "Empty Cart", cart_path(@cart), method: :delete %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 
-
-<% @cart_products.each do |cart_product| %>
-  <%= cart_product.product.name %>
-  <%= link_to "Delete", cart_product_path(cart_product), method: :delete %>
-<% end %>
-<%= link_to "Confirm", confirm_cart_path(@cart), method: :put %>

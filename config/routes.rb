@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :carts, only: :show do
     resources :payments, only: :new
   end
+  resources :carts, only: :destroy
   resources :cart_products, only: :destroy
   resources :diagnostics, only: [:index, :show, :create]
   put '/carts/:id/confirm', to: 'carts#confirm', as: 'confirm_cart'

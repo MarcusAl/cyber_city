@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     @cart_products = @cart.cart_products
     @total = 0
     @cart.products.each do |product|
-      @total += product.price_cents
+      @total += product.price
     end
     @total
   end
@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     line_items = @cart.products.map do |product|
       {
         name: product.name,
-        amount: product.price_cents * 100,
+        amount: product.price_cents,
         currency: 'gbp',
         quantity: 1
       }
@@ -30,5 +30,11 @@ class CartsController < ApplicationController
 
     @cart.update(checkout_session_id: session.id, state: :confirmed)
     redirect_to new_cart_payment_path(@cart)
+  end
+
+  def destroy
+    @cart = Cart.find(params[:id])
+    @cart.destroy!
+    redirect_to products_path, notice: "Cart Destroyed"
   end
 end

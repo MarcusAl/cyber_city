@@ -4,6 +4,7 @@
 
 Product.destroy_all
 User.destroy_all
+Cart.destroy_all
 
 puts "Starting Up..."
 
@@ -57,13 +58,13 @@ def rand_generator(arr); arr.sample end
 
 def category_generator(arr); arr.sample end
 
-def price_generator; rand(30.0..80.0) end
+def price_generator; rand(30..80) end
 
 puts "Creating methods..."
 
 def rand_product(arr1, arr2)
   { name: rand_generator(arr1), description: rand_generator(arr2),
-    price: price_generator.round(2)}
+    price: price_generator}
 end
 
 def rand_product_software_security(arr, arr2)

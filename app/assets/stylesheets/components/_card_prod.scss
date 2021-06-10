@@ -157,4 +157,15 @@
   .filters {
     display: block;
     margin: 16px 0;
+    text-decoration: none !important;
+    color: #11698e;
   }
+
+  .active-filter{
+    color:brown;
+    font-weight: bold;
+  }
+  
+ 
+
+  

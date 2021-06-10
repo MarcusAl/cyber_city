@@ -1,12 +1,45 @@
-<h1>Products</h1>
-
-<div class="container">
-    <% @products.each do |product| %>
-
-        <h5 class="border">
-            <%= product.name %>
-        </h5>
-         <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
-        <br>
-    <% end %>
+<div class="main-page-container d-flex justify-content-between">
+    <div class="filter-container bg-white">
+        <a href="#" class= "filters" data-filter = ".Software-Security">Software Security</a>
+        <a href="#" class= "filters" data-filter = ".GDPR-compliance">GDPR compliance</a>
+        <a href="#" class= "filters" data-filter = ".PCI-DSS-Compliance">PCI DSS Compliance</a>
+        <a href="#" class= "filters" data-filter = ".HTTP-Headers-Security">HTTP Headers Security</a>
+        <a href="#" class= "filters" data-filter = ".Content-Security-Policy">Content Security Policy</a>
+        <a href="#" class= "filters" data-filter = ".Others">Others</a>
+    </div>
+        <div class="products-index-container">
+            <% @products.each do |product| %>
+        
+            <div class="selected product-card-index-page <%= product.category %> category">
+                <a href="/products/<%= product.id %>", class="btn text-decoration-none ">
+                <% if product.photos.attached? %>
+                    <%= cl_image_tag product.photos[0].key, alt: "alttext" %>
+                    </div>
+                <% else %>
+                    <div class="product-image-index-page">
+                    <%= image_tag 'https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/06/2c/2a/062c2a8f-50d1-81b1-1cc3-fa6aa50bc9f3/source/256x256bb.jpg', alt: "alttext", crop: :fill %>
+                    </div>
+                <% end %>
+                <div class="product-info-index-page">
+                    <p><strong><%= product.name %></strong></p>
+                    <p><%= product.description %></p> 
+            
+                </div>
+                <div class="product-price-index-page">
+                    <p><strong>£<%#= product.price %></strong></p> %>
+                    <h5 class="border">
+                    <%= product.name %> 
+                    </h5>
+                    <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
+                    <br>
+                </div>
+                </div>
+            </a>
+        
+            <% end %>
+        </div>
 </div>
+
+
+  
+

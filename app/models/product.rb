@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
   CATEGORIES = [
-    'Software Security',
-    'GDPR compliance',
-    'PCI DSS Compliance',
-    'HTTP Headers Security',
-    'Content Security Policy',
+    'Software-Security',
+    'GDPR-compliance',
+    'PCI-DSS-Compliance',
+    'HTTP-Headers-Security',
+    'Content-Security-Policy',
     'Others'
   ]
   belongs_to :user

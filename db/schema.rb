@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_162015) do
+ActiveRecord::Schema.define(version: 2021_06_10_171136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,15 +75,15 @@ ActiveRecord::Schema.define(version: 2021_06_10_162015) do
     t.float "lng"
     t.string "city"
     t.string "http_header_scores_description"
-    t.string "http_header_scores_class"
     t.string "csp_scores_description"
-    t.string "csp_scores_class"
     t.string "gdpr_scores_description"
-    t.string "gdpr_scores_class"
     t.string "app_scan_scores_description"
-    t.string "app_scan_scores_class"
     t.string "pci_dss_scores_description"
-    t.string "pci_dss_scores_class"
+    t.string "http_header_scores_colour"
+    t.string "csp_scores_colour"
+    t.string "gdpr_scores_colour"
+    t.string "app_scan_scores_colour"
+    t.string "pci_dss_scores_colour"
     t.index ["user_id"], name: "index_diagnostics_on_user_id"
   end
 

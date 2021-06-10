@@ -1,3 +1,21 @@
+<div class="container">
+  <div class="row py-4">
+    <%# Cart Image Here %>
+    <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
+    <div class="col">
+      <h1>Cart #<%= @cart.id %> <small><span class="badge badge-primary"><%= @cart.state %></span></small></h1>
+      <ul class="list-unstyled">
+        <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date %></li>
+        <% @cart.products.each do |product| %>
+          <li><strong>PRODUCT</strong> <%= product.name %> [<%= product.price_cents %>]</li>
+        <% end %>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @total %></li>
+      </ul>
+      <p>Estimated delivery in <strong>2 business days</strong></p>
+    </div>
+  </div>
+</div>
+
 <% @cart_products.each do |cart_product| %>
   <%= cart_product.product.name %>
   <%= link_to "Delete", cart_product_path(cart_product), method: :delete %>

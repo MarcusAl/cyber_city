@@ -18,7 +18,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
 
-  def price_cents
-    price * 100
-  end
+  monetize :price_cents
+  # def price_cents
+  #   price * 100
+  # end
 end

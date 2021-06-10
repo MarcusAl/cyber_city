@@ -1,7 +1,13 @@
 class CartsController < ApplicationController
   def show
-    @cart = Cart.find(params[:id])
+    # @cart = Cart.find(params[:id])
+    @cart = current_user.cart
     @cart_products = @cart.cart_products
+    @total = 0
+    @cart.products.each do |product|
+      @total += product.price_cents
+    end
+    @total 
   end
 
   def confirm
@@ -24,5 +30,15 @@ class CartsController < ApplicationController
 
     @cart.update(checkout_session_id: session.id, state: :confirmed)
     redirect_to new_cart_payment_path(@cart)
+  end
+
+  def amount
+    @cart = current_user.cart
+    @cart_products = @cart.cart_products
+    num = 0
+    @cart_products.each do |product|
+      num += product.price
+    end
+    num
   end
 end

@@ -16,10 +16,10 @@ class DiagnosticsController < ApplicationController
     @timestamp = Time.now.to_i
     @url = secure_params[:url]
     uri = URI("https://www.immuniweb.com/websec/api/v1/chsec/#{@timestamp}.html")
-    response = Net::HTTP.post_form(uri, 'tested_url' => @url, 'choosen_id' => 'any', 'dnsr' => 'off', 'recheck' => 'false')
-    case response
+    res = Net::HTTP.post_form(uri, 'tested_url' => @url, 'choosen_id' => 'any', 'dnsr' => 'off', 'recheck' => 'false')
+    case res
     when Net::HTTPOK then
-      info = JSON.parse(response.body)
+      info = JSON.parse(res.body)
       p info
       if info['test_id']
         @test_id = info['test_id']
@@ -31,20 +31,26 @@ class DiagnosticsController < ApplicationController
     else
       flash[:notice] = "Something went wrong, please try again."
     end
-    raise
+    @diagnostic = diagnostic.new(@diagnostics_fomatted_results)
+    @diagnostic.user = current_user
+    if @diagnostic.save
+      redirect_to diagnostic_path(@diagnostic)
+    else
+      render :new
+    end
   end
 
   private
 
   def secure_params
-    params.require(:diagnostic).permit(:url)
+    params.require(:diagnostic).permit(:tested_url)
   end
 
   def cached_checker
     uri = URI("https://www.immuniweb.com/websec/api/v1/get_result/#{@timestamp}.html")
     diagnostic = Net::HTTP.post_form(uri, 'id' => @test_id)
     diagnostic_results = JSON.parse(diagnostic.body)
-    @diagnostics = {
+    @diagnostics_fomatted_results = {
       score: diagnostic_results['score'],
       grade: diagnostic_results['grade'],
       tested_url: diagnostic_results['tested_url'],
@@ -75,7 +81,8 @@ class DiagnosticsController < ApplicationController
       checker
     else
       diagnostic_results = JSON.parse(diagnostic.body)
-      @diagnostics = {
+      raise
+      @diagnostics_fomatted_results = {
         score: diagnostic_results['score'],
         grade: diagnostic_results['grade'],
         tested_url: diagnostic_results['tested_url'],

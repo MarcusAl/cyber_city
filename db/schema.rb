@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_110701) do
+ActiveRecord::Schema.define(version: 2021_06_10_162015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,16 +62,28 @@ ActiveRecord::Schema.define(version: 2021_06_10_110701) do
   end
 
   create_table "diagnostics", force: :cascade do |t|
-    t.string "url"
-    t.string "score"
-    t.string "wss_test"
-    t.string "ss_test"
-    t.string "gdpr_comp_test"
-    t.string "pci_dss_test"
-    t.string "http_headers_test"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
+    t.string "grade"
+    t.string "tested_url"
+    t.string "firewalled"
+    t.boolean "pci_compliance"
+    t.boolean "gdpr_compliance"
+    t.float "lat"
+    t.float "lng"
+    t.string "city"
+    t.string "http_header_scores_description"
+    t.string "http_header_scores_class"
+    t.string "csp_scores_description"
+    t.string "csp_scores_class"
+    t.string "gdpr_scores_description"
+    t.string "gdpr_scores_class"
+    t.string "app_scan_scores_description"
+    t.string "app_scan_scores_class"
+    t.string "pci_dss_scores_description"
+    t.string "pci_dss_scores_class"
     t.index ["user_id"], name: "index_diagnostics_on_user_id"
   end
 

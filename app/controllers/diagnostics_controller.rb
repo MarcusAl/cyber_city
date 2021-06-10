@@ -54,28 +54,16 @@ class DiagnosticsController < ApplicationController
       lat: diagnostic_results['lat'],
       lng: diagnostic_results['lng'],
       city: diagnostic_results['city'],
-      scores: {
-        http_headers: {
-          description: diagnostic_results['internals']['scores']['http_headers']['description'],
-          colour: diagnostic_results['internals']['scores']['http_headers']['class']
-        },
-        csp: {
-          description: diagnostic_results['internals']['scores']['csp']['description'],
-          colour: diagnostic_results['internals']['scores']['csp']['class']
-        },
-        gdpr: {
-          description: diagnostic_results['internals']['scores']['gdpr']['description'],
-          colour: diagnostic_results['internals']['scores']['gdpr']['class']
-        },
-        app_scan: {
-          description: diagnostic_results['internals']['scores']['app_scan']['description'],
-          colour: diagnostic_results['internals']['scores']['app_scan']['class']
-        },
-        pci_dss: {
-          description: diagnostic_results['internals']['scores']['pci_dss']['description'],
-          colour: diagnostic_results['internals']['scores']['pci_dss']['class']
-        }
-      }
+      http_header_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+      http_header_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+      csp_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+      csp_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+      gdpr_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+      gdpr_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+      app_scan_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+      app_scan_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+      pci_dss_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+      pci_dss_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class']
     }
   end
 
@@ -97,28 +85,16 @@ class DiagnosticsController < ApplicationController
         lat: diagnostic_results['lat'],
         lng: diagnostic_results['lng'],
         city: diagnostic_results['city'],
-        scores: {
-          http_headers: {
-            description: diagnostic_results['internals']['scores']['http_headers']['description'],
-            colour: diagnostic_results['internals']['scores']['http_headers']['class']
-          },
-          csp: {
-            description: diagnostic_results['internals']['scores']['csp']['description'],
-            colour: diagnostic_results['internals']['scores']['csp']['class']
-          },
-          gdpr: {
-            description: diagnostic_results['internals']['scores']['gdpr']['description'],
-            colour: diagnostic_results['internals']['scores']['gdpr']['class']
-          },
-          app_scan: {
-            description: diagnostic_results['internals']['scores']['app_scan']['description'],
-            colour: diagnostic_results['internals']['scores']['app_scan']['class']
-          },
-          pci_dss: {
-            description: diagnostic_results['internals']['scores']['pci_dss']['description'],
-            colour: diagnostic_results['internals']['scores']['pci_dss']['class']
-          }
-        }
+        http_header_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+        http_header_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+        csp_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+        csp_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+        gdpr_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+        gdpr_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+        app_scan_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+        app_scan_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+        pci_dss_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+        pci_dss_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class']
       }
     end
   end

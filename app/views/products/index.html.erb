@@ -6,7 +6,7 @@
         <h5 class="border">
             <%= product.name %>
         </h5>
-         <%= link_to "Add product",  product_cart_products_path(product.id) %>
+         <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
         <br>
     <% end %>
 </div>

@@ -1,4 +1,5 @@
 <% @cart_products.each do |cart_product| %>
-<%= cart_product.product.name %>
-<%= link_to "Delete", cart_product_path(cart_product), method: :delete %>
+  <%= cart_product.product.name %>
+  <%= link_to "Delete", cart_product_path(cart_product), method: :delete %>
 <% end %>
+<%= link_to "Confirm", confirm_cart_path(@cart), method: :put %>

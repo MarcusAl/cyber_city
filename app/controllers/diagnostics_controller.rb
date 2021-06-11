@@ -17,9 +17,11 @@ class DiagnosticsController < ApplicationController
     @url = secure_params[:tested_url]
     uri = URI("https://www.immuniweb.com/websec/api/v1/chsec/#{@timestamp}.html")
     res = Net::HTTP.post_form(uri, 'tested_url' => @url, 'choosen_id' => 'any', 'dnsr' => 'off', 'recheck' => 'false')
+    p res
     case res
     when Net::HTTPOK then
       info = JSON.parse(res.body)
+      p info
       if info['test_id']
         @test_id = info['test_id']
         cached_checker
@@ -72,6 +74,7 @@ class DiagnosticsController < ApplicationController
   def checker
     uri = URI("https://www.immuniweb.com/websec/api/v1/get_result/#{@timestamp}.html")
     diagnostic = Net::HTTP.post_form(uri, 'job_id' => @test_id)
+    p diagnostic
     if diagnostic.body['status'] == 'in_progress'
       sleep 60
       checker

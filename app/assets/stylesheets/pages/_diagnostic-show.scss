@@ -70,12 +70,12 @@
 .main-5-scores {
   display: flex;
   justify-content: space-between;
+  .fas {
+    color: white;
+    font-size: 64px;
+  }
 }
 
-.fas {
-  color: white;
-  font-size: 64px;
-}
 
 .green-score {
   background-color: #4aa96c;

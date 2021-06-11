@@ -162,7 +162,57 @@ puts "Processing...(4/4)"
   user.save!
 end
 
+# puts 'creating diagnostic'
+# Diagnostic.create!(
+#   score: 90,
+#   grade: 'A',
+#   tested_url: 'https://www.lewagon.com/',
+#   firewalled: '0',
+#   pci_compliance: false,
+#   gdpr_compliance: true,
+#   lat: 40.772301,
+#   lng: -73.8722,
+#   city: 'Flushing',
+#   http_header_scores_description: "No Issues Found",
+#   http_header_scores_colour: 'green',
+#   csp_scores_description: "No Issues Found",
+#   csp_scores_colour: 'green',
+#   gdpr_scores_description: "No Issues Found",
+#   gdpr_scores_colour: 'green',
+#   app_scan_scores_description: "No Issues Found",
+#   app_scan_scores_colour: 'green',
+#   pci_dss_scores_description: "1 issue found",
+#   pci_dss_scores_colour: 'orange'
+#   )
+# puts 'completed diagnostic'
+
+# puts 'creating diagnostic'
+# Diagnostic.create!(
+#   user_id:
+#   score: 85,
+#   grade: 'B+',
+#   tested_url: 'https://www.amazon.co.uk/',
+#   firewalled: '0',
+#   pci_compliance: true,
+#   gdpr_compliance: false,
+#   lat: 45.4594,
+#   lng: -73.550102,
+#   city: 'Montreal',
+#   http_header_scores_description: "No Issues Found",
+#   http_header_scores_colour: 'green',
+#   csp_scores_description: "No Major issues Found",
+#   csp_scores_colour: 'yellow',
+#   gdpr_scores_description: "1 issue found",
+#   gdpr_scores_colour: 'orange',
+#   app_scan_scores_description: "No Issues Found",
+#   app_scan_scores_colour: 'green',
+#   pci_dss_scores_description: "No Issues found",
+#   pci_dss_scores_colour: 'green'
+#   )
+# puts 'completed diagnostic'
+
 puts "Process Complete"
+
 
 
 # DEBUG

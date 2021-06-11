@@ -1,1 +1,65 @@
-<%= @diagnostic %>
+<% http_headers_colour = @diagnostic.http_header_scores_colour %>
+<% csp_scores_colour = @diagnostic.csp_scores_colour %>
+<% gdpr_score_colour = @diagnostic.gdpr_scores_colour %>
+<% app_scan_colour = @diagnostic.app_scan_scores_colour %>
+<% pci_dss_colour = @diagnostic.pci_dss_scores_colour %>
+
+<div class="main-page-container">
+  <div class="score-main-details">
+    <div class="test-image">
+      <% if @diagnostic.score >= 90 %>
+        <%= image_tag "https://media.istockphoto.com/vectors/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-ok-vector-id1094780808?k=6&m=1094780808&s=612x612&w=0&h=U_-vy-la7Q8Mz7yzlXV4osQMQk8kY85YPNVpoQZgJX8=", alt: "alttext" %>
+      <% elsif @diagnostic.score < 70 %>
+        <%= image_tag "https://lh3.googleusercontent.com/proxy/rQTuqSEao9c1mAQyubnku8-nCd4YsSBqErLi4tz1Yr5oMXgwfheccFTuJBUGzjmIBtRtBbZKJ4D0RdjXpFMPomrcCq9LkgJCkTYVenAHYvIJYQdSSaRlL63bpZ3YirtSadbDsgeuNO8", alt: "alttext" %>
+      <% else %>
+        <%= image_tag "https://image.pngaaa.com/977/1308977-middle.png", alt: "alttext" %>
+      <% end %>
+    </div>
+    <div class="test-details">
+      <h2>Summary of <strong><%= @diagnostic.tested_url %></strong> security test.</h2>
+      <p><strong>Grade:</strong> <%= @diagnostic.grade %></p>
+      <p><strong>Score:</strong> <%= @diagnostic.score %>/100</p>
+      <p><strong>Location:</strong> <%= @diagnostic.city %></p>
+      <p><strong>Tested on:</strong> <%= @diagnostic.created_at %></p>
+      <%= link_to 'View products', products_path, class: "btn btn-dark mt-3" %>
+    </div>
+
+  </div>
+  <div class="main-5-scores">
+    <div class="<%= @diagnostic.gdpr_scores_colour %>-score">
+      <p class=""><strong>GDPR Compliance</strong></p>
+      <i class="fas fa-clipboard-list"></i>
+      <div class="result-content">
+        <p><%= @diagnostic.gdpr_scores_description %> </p>
+      </div>
+    </div>
+    <div class="<%= @diagnostic.csp_scores_colour %>-score">
+      <p><strong>PCI DSS Compliance</strong></p>
+      <i class="fas fa-clipboard-list"></i>
+      <div class="result-content">
+        <p><%= @diagnostic.pci_dss_scores_description %> </p>
+      </div>
+    </div>
+    <div class="<%= @diagnostic.http_header_scores_colour %>-score">
+      <p><strong>HTTP Headers</strong></p>
+      <i class="fas fa-heading"></i>
+      <div class="result-content">
+        <p><%= @diagnostic.http_header_scores_description %> </p>
+      </div>
+    </div>
+    <div class="<%= @diagnostic.csp_scores_colour %>-score">
+      <p><strong>Content Security Policy (CSP)</strong></p>
+      <i class="fas fa-shield-alt"></i>
+      <div class="result-content">
+        <p><%= @diagnostic.csp_scores_description %> </p>
+      </div>
+    </div>
+    <div class="<%= @diagnostic.app_scan_scores_colour %>-score">
+      <p><strong>Software Security</strong></p>
+      <i class="fas fa-cogs"></i>
+      <div class="result-content">
+        <p><%= @diagnostic.app_scan_scores_description %> </p>
+      </div>
+    </div>
+  </div>
+</div>

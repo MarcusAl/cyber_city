@@ -1,0 +1,138 @@
+.diagnostic-card {
+  height: 300px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.diagnostic-card-image {
+  margin: 16px;
+  height: 280px;
+  width: 280px;
+  border-radius: 8px;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.diagnostic-card-content {
+  margin: 16px;
+  flex-grow: 1;
+  text-align: left;
+  h2 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+  p {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.score-main-details {
+  height: 450px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.test-image {
+    margin: 16px;
+    height: 400px;
+    width: 400px;
+    border-radius: 8px;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+.test-details {
+  margin: 16px;
+  flex-grow: 1;
+  h2 {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+  p {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.main-5-scores {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fas {
+  color: white;
+  font-size: 64px;
+}
+
+.green-score {
+  background-color: #4aa96c;
+  width: 17%;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 8px;
+  .result-content {
+    border-top: solid 1px white;
+  }
+  p {
+    color: white;
+    max-width: 100%;
+  }
+}
+
+.yellow-score {
+  background-color: #ffcb57;
+  width: 17%;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 8px;
+  .result-content {
+    border-top: solid 1px white;
+  }
+  p {
+    color: white;
+    max-width: 100%;
+  }
+}
+
+.orange-score {
+  background-color: #f7a440;
+  width: 17%;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 8px;
+  .result-content {
+    border-top: solid 1px white;
+  }
+  p {
+    color: white;
+    max-width: 100%;
+  }
+}
+
+.red-score {
+  background-color: #f55c47;
+  width: 17%;
+  border-radius: 16px;
+  padding: 8px;
+  margin: 8px;
+  .result-content {
+    border-top: solid 1px white;
+  }
+  p {
+    color: white;
+    max-width: 100%;
+  }
+}

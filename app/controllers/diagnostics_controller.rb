@@ -32,7 +32,7 @@ class DiagnosticsController < ApplicationController
     end
     @diagnostic = Diagnostic.new(@diagnostics_fomatted_results)
     @diagnostic.user = current_user
-    @diagnostic.save
+    @diagnostic.save!
     redirect_to diagnostic_path(@diagnostic)
   end
 

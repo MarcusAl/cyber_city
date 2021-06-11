@@ -9,7 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("jquery")
-
+require ("jquery")
+require ("jquery2")
+require ("jquery3")
+require ("jquery_ujs")
 
 $('.filter-container a').on('click', function() {
   console.log('click');

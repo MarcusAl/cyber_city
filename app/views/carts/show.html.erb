@@ -1,9 +1,14 @@
-<div class="container bg-dark justify-content-center d-flex">
-  <div class="row py-4">
+<%= render 'shared/navbar' %>
+<div class="container bg-dark justify-content-center d-flex mt-5 cart-container">
+  <div class="row py-4 mt-5">
     <%# Cart Image Here %>
     <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
     <div class="col">
-      <h1>Cart <small><span class="badge badge-primary"><%= @cart.state %></span></small></h1>
+      <% if @cart.state == "pending" %>
+          <h1 class="text-white">Your Cart <small><span class="badge text-white-50 badge-success"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+      <% else %>
+          <h1 class="text-white">Your Cart <small><span class="badge text-white badge-secondary"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+      <% end %>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
         <% @cart.products.each do |product| %>

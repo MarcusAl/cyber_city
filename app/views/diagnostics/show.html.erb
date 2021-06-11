@@ -4,8 +4,8 @@
     <div class="test-image">
       <% if @diagnostic.score >= 90 %>
         <%= image_tag "https://media.istockphoto.com/vectors/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-ok-vector-id1094780808?k=6&m=1094780808&s=612x612&w=0&h=U_-vy-la7Q8Mz7yzlXV4osQMQk8kY85YPNVpoQZgJX8=", alt: "alttext" %>
-      <% elsif @diagnostic.score < 70 %>
-        <%= image_tag "https://lh3.googleusercontent.com/proxy/rQTuqSEao9c1mAQyubnku8-nCd4YsSBqErLi4tz1Yr5oMXgwfheccFTuJBUGzjmIBtRtBbZKJ4D0RdjXpFMPomrcCq9LkgJCkTYVenAHYvIJYQdSSaRlL63bpZ3YirtSadbDsgeuNO8", alt: "alttext" %>
+      <% elsif @diagnostic.score < 50 %>
+        <%= image_tag "https://t4.ftcdn.net/jpg/00/49/49/71/240_F_49497163_jzhcVIQ7NtHdBvJNFWChCXToIfLRYF57.jpg", alt: "alttext" %>
       <% else %>
         <%= image_tag "https://image.pngaaa.com/977/1308977-middle.png", alt: "alttext" %>
       <% end %>
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="<%= @diagnostic.csp_scores_colour %>-score">
-      <p><strong>Content Security Policy (CSP)</strong></p>
+      <p><strong>Content Security Policy</strong></p>
       <i class="fas fa-shield-alt"></i>
       <div class="result-content">
         <p><%= @diagnostic.csp_scores_description %> </p>

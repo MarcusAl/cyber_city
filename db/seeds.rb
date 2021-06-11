@@ -211,8 +211,31 @@ end
 #   )
 # puts 'completed diagnostic'
 
-puts "Process Complete"
 
+
+edi = User.create!(email:"edi@test.com", password:123456, first_name:"Spence", last_name:"Wagon")
+Diagnostic.create(user:edi, score: 90,
+grade: "A",
+tested_url: "https://www.lewagon.com/",
+firewalled: "0",
+pci_compliance: false,
+gdpr_compliance: true,
+lat: 40.772301,
+lng: -73.8722,
+city: "Flushing",
+http_header_scores_description: "No Issues Found",
+csp_scores_description: "No Issues Found",
+gdpr_scores_description: "No Issues Found",
+app_scan_scores_description: "No Issues Found",
+pci_dss_scores_description: "No Issues Found",
+http_header_scores_colour: "green",
+csp_scores_colour: "green",
+gdpr_scores_colour: "green",
+app_scan_scores_colour: "green",
+pci_dss_scores_colour: "green")
+
+
+puts "Process Complete"
 
 
 # DEBUG

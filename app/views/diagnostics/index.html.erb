@@ -1,1 +1,18 @@
 <%= render 'shared/navbar' %>
+<div class="main-page-container">
+  <h1>Your Diagnostics</h1>
+  <% @diagnostics.each do |diagnostic| %>
+    <a href="/diagnostics/<%= diagnostic.id %>", class="btn text-decoration-none ">
+      <div class="diagnostic-card">
+        <div class="diagnostic-card-image">
+          <%= image_tag "https://media.istockphoto.com/vectors/unlock-icon-silhouette-vector-id600090774?k=6&m=600090774&s=612x612&w=0&h=HIkB4NQZ8nlzWxZybdsvMKEJJnAy0WWxCZhYQxjf90k=", alt: "alttext" %>
+        </div>
+        <div class="diagnostic-card-content">
+          <h5>See results of your diagnostic for <strong><%= diagnostic.tested_url %></strong> </h5>
+          <p>Overall Score: <%= diagnostic.score %> </p>
+          <p>Overall Grade: <%= diagnostic.grade %> </p>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>

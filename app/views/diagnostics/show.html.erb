@@ -1,9 +1,4 @@
-<% http_headers_colour = @diagnostic.http_header_scores_colour %>
-<% csp_scores_colour = @diagnostic.csp_scores_colour %>
-<% gdpr_score_colour = @diagnostic.gdpr_scores_colour %>
-<% app_scan_colour = @diagnostic.app_scan_scores_colour %>
-<% pci_dss_colour = @diagnostic.pci_dss_scores_colour %>
-
+<%= render 'shared/navbar' %>
 <div class="main-page-container">
   <div class="score-main-details">
     <div class="test-image">
@@ -63,3 +58,4 @@
     </div>
   </div>
 </div>
+

@@ -3,10 +3,18 @@
 @import "diagnostic-show";
 
 body {
-  background-color: grey;
+  background-color: #f6f9fc;
 }
 
 .main-page-container {
-  max-width: 88%;
-  margin: 100px auto;
+  max-width: 77%;
+  height: 80vh;
+  margin: 200px auto;
+  // border: 3px solid red;
+  padding: 20px 30px;
+  // background-color: #47597e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
 }

@@ -18,3 +18,4 @@ class Diagnostic < ApplicationRecord
   validates :pci_dss_scores_description, presence: true
   validates :pci_dss_scores_colour, presence: true
 end
+

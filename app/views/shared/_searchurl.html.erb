@@ -1,7 +1,7 @@
 <div id="search-form">
   <%= simple_form_for @diagnostic do |f| %>
     <div>
-      <%= f.input :url, placeholder: "http://website.com" %>
+      <%= f.input :tested_url, placeholder: "http://website.com" %>
     </div>
     <div>
       <%= f.submit value: 'Run', class: "btn text-white search-submit-button" %>

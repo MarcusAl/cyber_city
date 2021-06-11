@@ -7,12 +7,12 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require ('greensock/TweenLite')
-require ('greensock/easing/EasePack')
-require ('greensock/jquery.gsap.js')
 
 require("jquery")
-
+require ("jquery")
+require ("jquery2")
+require ("jquery3")
+require ("jquery_ujs")
 
 $('.filter-container a').on('click', function() {
   console.log('click');

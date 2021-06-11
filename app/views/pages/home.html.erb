@@ -1,15 +1,29 @@
 <% render 'shared/navbar' %>
 
+
 <div class="main-page-container">
-  <div id="main-banner">
-    <div class="banner-info">
-      <h1>DIAGNODE</h1>
-      <div id="slogan">
-        <h4>Security that works for everyone</h4>
+
+  <div class="search-container">
+      <div id="url-search">
+        <div>
+          <h1 class="text-white">Diagnode</h1>
+          <div class="url-sign ">
+            <h4><strong>Diagnode</strong> is an online vulnerability <strong>scanner</strong> that finds cyber security <strong>weaknesses</strong> in your digital infrastructure, to <strong>avoid</strong> costly data breaches.</h4>
+            <br>
+            <h4>Insert your URL below.</h4>
+          </div>
+        </div>
+        <div>
+          <%= render "shared/searchurl" %>
+        </div>
       </div>
     </div>
-  </div>
+</div>
 
+<div class="banner-image-container">
+  <div class="banner-image">
+    <%= image_tag("undraw_Security_on_re_e491-removebg.png", size: "750x500", alt: "Edit Entry") %>
+  </div>
   <div id="info-container">
     <div class="content_container">
       <div class="promo-block security">
@@ -21,7 +35,7 @@
             Prevent data breaches and increase customer trust with continous cyber protection
           </div>
           <br>
-          <button type="button" class="btn btn-secondary">Read more</button>
+          <button type="button" class="btn btn-info shadow-sm">Read more</button>
         </div>
       </div>
     </div>
@@ -36,7 +50,7 @@
             Build safer applications by integrating cyber security into your software development cycle
           </div>
           <br>
-          <button type="button" class="btn btn-secondary">Read more</button>
+          <button type="button" class="btn btn-info shadow-sm">Read more</button>
         </div>
       </div>
     </div>
@@ -51,29 +65,15 @@
             Save time by focusing on what truly matters, and reduce friction with development processes
           </div>
           <br>
-          <button type="button" class="btn btn-secondary">Read more</button>
+          <button type="button" class="btn btn-info shadow-sm">Read more</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="search-container">
-    <div id="url-search">
-      <div>
-        <h1>Run Diagnostics</h1>
-        <div class="url-sign ">
-          <h4><strong>Diagnode</strong> is an online vulnerability <strong>scanner</strong> that finds cyber security <strong>weaknesses</strong> in your digital infrastructure, to <strong>avoid</strong> costly data breaches.</h4>
-          <br>
-          <h4>Insert your URL below.</h4>
-        </div>
-      </div>
-      <div>
-        <%= render "shared/searchurl" %>
-      </div>
-    </div>
-  </div>
+</div>
 
-  <div>
+
     <div class="news-container">
       <div class="news-card">
         <h1>Cyber News</h1>
@@ -82,9 +82,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-</div>
+
 
 <div class="footer">
   <div>Contact us</div>

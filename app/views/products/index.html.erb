@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 <div class="marketplace-container d-flex justify-content-between">
-    <div class="filter-container bg-white">
+    <div class="filter-container bg-white pl-4 pr-4">
         <a href="#" class= "filters" data-filter = ".Software-Security">Software Security</a>
         <a href="#" class= "filters" data-filter = ".GDPR-compliance">GDPR compliance</a>
         <a href="#" class= "filters" data-filter = ".PCI-DSS-Compliance">PCI DSS Compliance</a>
@@ -13,7 +13,7 @@
             <% @products.each do |product| %>
                     <a >
 
-                <div class="selected product-card-index-page <%=product.category %> category">
+                <div class="selected product-card-index-page <%=product.category %> category border-bottom">
                         <div class="outer d-flex w-100">
                             <span class="bg"><%= product.user.first_name.capitalize %> <%= product.user.last_name.capitalize %></span>
                             <% if product.photos.attached? %>

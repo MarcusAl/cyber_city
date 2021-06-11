@@ -12,9 +12,11 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <li class="nav-item dropdown">
-          <%= link_to "/carts/#{current_user.id}" do %>
+        <% if @cart.present? %>
+          <%= link_to cart_path(@cart) do %>
             <i class="fa fa-shopping-cart my-nav-cart nav-link dropdown-toggle"></i>
           <% end %>
+        <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Marketplace", "/products", class: "nav-link" %>
@@ -27,9 +29,9 @@
           </div>
         </li>
       <% else %>
-        <%= link_to "/carts/#{current_user.id}" do %>
-            <i class="fas fa-shopping-cart my-nav-cart"></i>
-          <% end %>
+        <%# <%= link_to cart_products_path do %>
+            <%# <i class="fas fa-shopping-cart my-nav-cart"></i> %>
+          <%# <% end %> %> %>
         <li class="nav-item">
           <%= link_to "Marketplace", "/products", class: "nav-link" %>
         </li>

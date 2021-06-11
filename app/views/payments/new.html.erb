@@ -1,10 +1,10 @@
-<%= render 'shared/navbar_payment' %>
+
 <div class="container mt-5">
   <div class="row py-4">
     <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %></div>
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @cart.products.first.name %></strong> for <strong><%= humanized_money_with_symbol @total %></strong></p>
+      <% raise %>
       <button id="pay" class="btn btn-primary">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>

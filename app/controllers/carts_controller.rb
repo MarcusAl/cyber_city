@@ -1,13 +1,13 @@
 class CartsController < ApplicationController
   def show
     # @cart = Cart.find(params[:id])
-    @cart = current_user.cart
-    @cart_products = @cart.cart_products
-    @total = 0
-    @cart.products.each do |product|
-
-      @total += product.price
-
+    @cart = Cart.find(params[:id])
+    unless @cart.nil?
+      @cart_products = @cart.cart_products
+      @total = 0
+      @cart.products.each do |product|
+        @total += product.price
+      end
     end
     @total
   end

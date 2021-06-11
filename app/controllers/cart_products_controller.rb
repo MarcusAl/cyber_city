@@ -1,10 +1,10 @@
 class CartProductsController < ApplicationController
     def create
-        @cart_product = CartProduct.new
         @cart = Cart.find_or_create_by(state: :pending, user: current_user)
-        @cart_product.cart = @cart
+        @cart_product = CartProduct.new
         @cart_product.product = Product.find(params[:product_id])
-        @cart_product.save
+        @cart.cart_products = @cart_product
+        @cart.save
         redirect_to cart_path(@cart)
     end
 

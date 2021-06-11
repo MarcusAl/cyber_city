@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def show
     # @cart = Cart.find(params[:id])
-    @cart = current_user.cart
+    @cart = Cart.find_or_create_by(state: :pending, user: current_user)
     @cart_products = @cart.cart_products
     @total = 0
     @cart.products.each do |product|
@@ -13,7 +13,7 @@ class CartsController < ApplicationController
   end
 
   def confirm
-    @cart = Cart.find(params[:id])
+    @cart = current_user.cart
 
     line_items = @cart.products.map do |product|
       {

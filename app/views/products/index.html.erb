@@ -1,4 +1,4 @@
-<div class="main-page-container d-flex justify-content-between">
+<div class="marketplace-container d-flex justify-content-between">
     <div class="filter-container bg-white">
         <a href="#" class= "filters" data-filter = ".Software-Security">Software Security</a>
         <a href="#" class= "filters" data-filter = ".GDPR-compliance">GDPR compliance</a>
@@ -6,6 +6,9 @@
         <a href="#" class= "filters" data-filter = ".HTTP-Headers-Security">HTTP Headers Security</a>
         <a href="#" class= "filters" data-filter = ".Content-Security-Policy">Content Security Policy</a>
         <a href="#" class= "filters" data-filter = ".Others">Others</a>
+    </div>
+    <div>
+    <%= render 'shared/product_card' %>
     </div>
         <div class="products-index-container">
             <% @products.each do |product| %>

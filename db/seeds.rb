@@ -213,7 +213,7 @@ end
 
 
 
-edi = User.create!(email:"edi@test.com", password:123456, first_name:"Spence", last_name:"Wagon")
+edi = User.create!(email:"eddie@test.com", password:123456, first_name:"Spence", last_name:"Wagon")
 Diagnostic.create(user:edi, score: 90,
 grade: "A",
 tested_url: "https://www.lewagon.com/",

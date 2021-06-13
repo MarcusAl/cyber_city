@@ -4,11 +4,16 @@
 <div class="main-page-container">
 
   <div class="search-container">
+  <div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
       <div id="url-search">
         <div>
-          <h1 class="text-white">Diagnode</h1>
-          <div class="url-sign ">
-            <h4><strong>Diagnode</strong> is an online vulnerability <strong>scanner</strong> that finds cyber security <strong>weaknesses</strong> in your digital infrastructure, to <strong>avoid</strong> costly data breaches.</h4>
+          <h1 class="text-white font-weight-bolder">Diagnode</h1>
+          <div class="url-sign">
+            <h4>An online vulnerability <strong>scanner</strong> that finds cyber security <strong>weaknesses</strong> in your digital infrastructure, to <strong>avoid</strong> costly data breaches.</h4>
             <br>
             <h4>Insert your URL below.</h4>
           </div>
@@ -17,6 +22,8 @@
           <%= render "shared/searchurl" %>
         </div>
       </div>
+  
+  </div>
     </div>
 </div>
 
@@ -102,11 +109,6 @@
   </div>
 </div>
 
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/maps.js"></script>
-<script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
 <script>
 // Themes begin
 am4core.useTheme(am4themes_animated);
@@ -134,7 +136,7 @@ polygonSeries.useGeodata = true;
 var polygonTemplate = polygonSeries.mapPolygons.template;
 polygonTemplate.tooltipText = "{name}";
 polygonTemplate.fill = am4core.color("#431342");
-polygonTemplate.stroke = am4core.color("#0a2540");
+polygonTemplate.stroke = am4core.color("#C0D5FF");
 polygonTemplate.strokeWidth = 0.5;
 polygonTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
 polygonTemplate.url = "https://www.datadrum.com/main.php?package={id}";

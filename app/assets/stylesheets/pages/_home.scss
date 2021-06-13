@@ -97,15 +97,103 @@ margin-bottom: 10px;
 
 .search-container,
 .cart-container {
-  width: 75%;
+  width: 76%;
   position: relative;
-  margin: 35px auto;
-  margin-bottom: 10rem;
+  margin: 100px auto;
   display: flex;
-  padding: 40px;
+  padding: 50px;
   // background: rgba( 244, 240, 240, 0.15 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px ); 
+}
+
+.search-container div {
+  position: relative;
+  display: inline-block;
+  color: #03e9f4;
+  font-size: 16px;
+  transition: .6s;
+  letter-spacing: 4px;
+}
+
+.search-container div span {
+  position: absolute;
+  display: block;
+}
+
+.search-container div span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C0D5FF);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+// .search-container div span:nth-child(2) {
+//   top: -100%;
+//   right: 0;
+//   width: 2px;
+//   height: 200%;
+//   background: linear-gradient(180deg, transparent, #C0D5FF);
+//   animation: btn-anim2 1s linear infinite;
+//   animation-delay: .25s
+// }
+
+// @keyframes btn-anim2 {
+//   0% {
+//     top: -100%;
+//   }
+//   50%,100% {
+//     top: 100%;
+//   }
+// }
+
+// .search-container div span:nth-child(3) {
+//   bottom: 0;
+//   right: -100%;
+//   width: 100%;
+//   height: 2px;
+//   background: linear-gradient(270deg, transparent, #C0D5FF);
+//   animation: btn-anim3 1s linear infinite;
+//   animation-delay: .5s
+// }
+
+// @keyframes btn-anim3 {
+//   0% {
+//     right: -100%;
+//   }
+//   50%,100% {
+//     right: 100%;
+//   }
+// }
+
+.search-container div span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #C0D5FF);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
 }
 
 .cart-container {
@@ -113,13 +201,6 @@ margin-bottom: 10px;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   color: white;
-  transition: 2s ease-in-out;
-}
-
-.cart-container:hover {
-  padding: 40px;
-  width: 100rem;
-  height: 65vh;
 }
 
 .cart-container::after {
@@ -130,7 +211,7 @@ margin-bottom: 10px;
   border-radius: 20px;
   width: 80%;
   height: 100rem;
-  background: linear-gradient(to top, rgba(29, 53, 86, 80%), transparent);
+  background: linear-gradient(to top, rgba(250, 69, 250, 80%), transparent);
   transform: skew(-20deg);
   z-index: -3;
 }
@@ -147,6 +228,9 @@ margin-bottom: 10px;
   transform: skew(-20deg);
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.1);
   z-index: -2;
 }
 
@@ -187,22 +271,23 @@ margin-bottom: 10px;
 }
 
 #search-form {
-  width: 80%;
+  width: 100%;
   margin-top: 32px;
-  padding: 25px;
+  padding: 18px;
+  margin-left: 20px;
   box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
+    background: linear-gradient(to bottom, rgba(29, 53, 86, 80%), transparent);
+  border-radius: 20px;
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   transition: 600ms;
   form {
-    padding-left: 24px;
     color: #3c8dad;
   }
   input {
-    padding: 32px;
+    padding: 20px;
     width: 80%;
   }
    .search-submit-button {
@@ -210,7 +295,7 @@ margin-bottom: 10px;
     border: none;
     padding: 8px;
     width: 150px;
-    background: linear-gradient(to top, rgba(29, 53, 86, 80%), transparent);
+    background: linear-gradient(to bottom, rgba(29, 53, 86, 80%), transparent);
     box-shadow: 
     12px 12px 16px 0 rgba(0.25, 0.25, 0.25, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.1);
@@ -223,10 +308,14 @@ margin-bottom: 10px;
 }
 
 #search-form:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    12px 12px 16px 0 rgba(100, 100, 100, 0.1) inset,
+    -8px -8px 12px 0 rgba(0, 0, 0, .35) inset;
   .search-submit-button:hover {
     background: rgb(255,255,255);
     background: linear-gradient(to top, rgba(0, 100, 200, 10%), transparent);
-    transition: 3s;
+    transition: 2s;
   }
   background: rgba(25, 69, 107, 0.3),
 }

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <p class="m-0 nav-link"><i class="das fa-robot pr-2"></i>Diagnode</p>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <p class="m-0 nav-link lead font-weight-bold text-white-50"><i class="fas fa-temperature-low mr-1 text-white-50" id="logo-icon"></i>Diagnode</p>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
   </div>
 </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<%# <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>
 
 const $dropdown = $(".dropdown");
@@ -80,4 +80,4 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 });
-</script>
+</script> %>

@@ -1,20 +1,27 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "diagnostic-show";
+@import "diagnostic";
 
 body {
-  background-color: #f6f9fc;
+  // background-color: #000;
+  // background-color: #101D21;
+  background-color: #020632;
+  overflow-x: hidden;
 }
 
 .main-page-container {
   max-width: 77%;
-  height: 80vh;
-  margin: 200px auto;
+  height: 90vh;
+  margin: 100px auto;
+  z-index: 20;
   // border: 3px solid red;
-  padding: 20px 30px;
+  padding: 30px 30px;
   // background-color: #47597e;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 25px;
+  align-content: center;
+  border-radius: 60%;
+
 }

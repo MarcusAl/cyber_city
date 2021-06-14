@@ -1,9 +1,9 @@
 <%= render 'shared/navbar' %>
 <div class="diagnostics-index-page">
-  <div class="main-page-container">
+  <div class="main-page-container unset-height">
     <h1>Your Diagnostics</h1>
     <% @diagnostics.each do |diagnostic| %>
-      <a href="/diagnostics/<%= diagnostic.id %>", class="btn text-decoration-none ">
+      <%= link_to diagnostic_path(diagnostic), class: 'btn text-decoration-none' do %>
         <div class="diagnostic-card">
           <div class="diagnostic-card-image">
             <%= image_tag "https://media.istockphoto.com/vectors/unlock-icon-silhouette-vector-id600090774?k=6&m=600090774&s=612x612&w=0&h=HIkB4NQZ8nlzWxZybdsvMKEJJnAy0WWxCZhYQxjf90k=", alt: "alttext" %>
@@ -14,7 +14,7 @@
             <p>Overall Grade: <%= diagnostic.grade %> </p>
           </div>
         </div>
-      </a>
+      <% end %>
     <% end %>
   </div>
 </div>

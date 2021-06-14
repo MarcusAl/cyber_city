@@ -25,15 +25,15 @@
             </div>
           <% end %>
         
-        <li><strong>Subtotal:</strong> <%= humanized_money_with_symbol @total %></li>
+        <li class="my-3"><strong>Subtotal:</strong> <%= humanized_money_with_symbol @total %></li>
       </ul>
       <%# Buttons %>
       <div class="d-flex align-self-start">
         <div class="col-4 px-0 mt-3">
-          <%= link_to "Confirm", confirm_cart_path(@cart), method: :put, class: 'btn btn-alert btn-outline-success text-white' %>
+          <%= link_to "Confirm", confirm_cart_path(@cart), method: :put, class: 'btn btn-alert btn-outline-success text-white font-weight-bold' %>
         </div>
         <div class="col-8 px-0 mt-3">
-          <%= link_to "Empty Cart", cart_path(@cart), method: :delete, class: 'btn btn-alert btn-outline-success text-white' %>
+          <%= link_to "Empty Cart", cart_path(@cart), method: :delete, class: 'btn btn-alert btn-outline-success text-white font-weight-bold' %>
         </div>
       </div>
     </div>

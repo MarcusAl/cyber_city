@@ -20,7 +20,15 @@ require("jquery")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+$('.filter-container a').on('click', function() {
+  console.log('click');
+  const filter = $(this).attr('data-filter')
+  $('.category').hide()
+  $(filter).show()
+  $('.filter-container a').removeClass('selected')
+  $(this).addClass('selected')
+  return false;
+})
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇

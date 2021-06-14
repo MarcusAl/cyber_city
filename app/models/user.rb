@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :products
   has_many :reviews
+  has_many :diagnostics
   has_one :cart
   validates :first_name, presence: true
   validates :last_name, presence: true

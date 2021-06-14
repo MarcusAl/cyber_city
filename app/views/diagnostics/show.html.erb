@@ -28,13 +28,15 @@
         <p><%= @diagnostic.gdpr_scores_description %> </p>
       </div>
     </div>
-    <div class="<%= @diagnostic.csp_scores_colour %>-score">
+
+    <div class="<%= @diagnostic.pci_dss_scores_colour %>-score">
       <p><strong>PCI DSS Compliance</strong></p>
       <i class="fas fa-clipboard-list"></i>
       <div class="result-content">
         <p><%= @diagnostic.pci_dss_scores_description %> </p>
       </div>
     </div>
+
     <div class="<%= @diagnostic.http_header_scores_colour %>-score">
       <p><strong>HTTP Headers</strong></p>
       <i class="fas fa-heading"></i>
@@ -42,6 +44,7 @@
         <p><%= @diagnostic.http_header_scores_description %> </p>
       </div>
     </div>
+
     <div class="<%= @diagnostic.csp_scores_colour %>-score">
       <p><strong>Content Security Policy</strong></p>
       <i class="fas fa-shield-alt"></i>
@@ -49,6 +52,7 @@
         <p><%= @diagnostic.csp_scores_description %> </p>
       </div>
     </div>
+    
     <div class="<%= @diagnostic.app_scan_scores_colour %>-score">
       <p><strong>Software Security</strong></p>
       <i class="fas fa-cogs"></i>

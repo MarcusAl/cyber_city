@@ -1,0 +1,22 @@
+.footer {
+  padding: 32px;
+  border-top: solid 1px white;
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+
+  .fab {
+    font-size: 32px;
+    transition: 0.2s ease-in-out;
+    margin-right: 6px;
+    margin-top: 6px;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.min-h {
+  min-height: calc(100vh - 178px);
+}

@@ -23,38 +23,38 @@ export const initMap = () => {
 
   // Configure series
   var polygonTemplate = polygonSeries.mapPolygons.template;
-  polygonTemplate.tooltipText = "{name}";
+  polygonTemplate.tooltipText = "Threats in {name}";
   polygonTemplate.fill = am4core.color("#431342");
   polygonTemplate.stroke = am4core.color("#C0D5FF");
-  polygonTemplate.strokeWidth = 0.5;
+  polygonTemplate.strokeWidth = 1;
   polygonTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-  polygonTemplate.url = "https://www.datadrum.com/main.php?package={id}";
-  polygonTemplate.urlTarget = "_blank";
+  polygonTemplate.url = "/products";
+  // polygonTemplate.urlTarget = "_blank";
 
-  // var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
-  // graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
-  // graticuleSeries.mapLines.template.line.strokeOpacity = 1;
-  // graticuleSeries.fitExtent = false;
+  var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+  graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
+  graticuleSeries.mapLines.template.line.strokeOpacity = 1;
+  graticuleSeries.fitExtent = false;
 
 
-  chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 1;
-  chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#000000");
+  // chart.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 1;
+  // chart.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#000000");
 
   // Create hover state and set alternative fill color
   var hs = polygonTemplate.states.create("hover");
   hs.properties.fill = chart.colors.getIndex(0).brighten(-0.5);
 
-  let animation;
-  setTimeout(function(){
-  animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
-  }, 3000)
+  // let animation;
+  // setTimeout(function(){
+  // animation = chart.animate({property:"deltaLongitude", to:100000}, 20000000);
+  // }, 3000)
 
   // Disable pan
   chart.seriesContainer.draggable = false;
   chart.seriesContainer.resizable = false;
 
   // Disable zoom
-  chart.maxZoomLevel = 1;
+  chart.maxZoomLevel = 1.2;
 
   chart.seriesContainer.events.on("down", function(){
   //  animation.stop();

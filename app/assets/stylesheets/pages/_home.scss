@@ -307,23 +307,19 @@ margin-bottom: 10px;
     transition: 3s;
   }
   
+  .search-submit-button:active {
+    box-shadow: 
+      12px 12px 16px 0 rgba(100, 100, 100, 0.1) inset,
+      -8px -8px 12px 0 rgba(0, 0, 0, .35) inset;
+    transition: 2s;
+    background: rgba(25, 69, 107, 0.3)
+  }
   .search-bar {
     display: inline-flex;
   }
 }
 
-#search-form:hover {
-  transform: scale(1.1);
-  box-shadow: 
-    12px 12px 16px 0 rgba(100, 100, 100, 0.1) inset,
-    -8px -8px 12px 0 rgba(0, 0, 0, .35) inset;
-  .search-submit-button:hover {
-    background: rgb(255,255,255);
-    background: linear-gradient(to top, rgba(0, 100, 200, 10%), transparent);
-    transition: 2s;
-  }
-  background: rgba(25, 69, 107, 0.3),
-}
+
 
 .news-container {
   width: 80%;

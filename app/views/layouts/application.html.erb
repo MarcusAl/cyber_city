@@ -20,6 +20,11 @@
     <%= render 'shared/flashes' %>
     <%= render 'shared/nav_jscript' %>
 
-    <%= yield %>
+    <div class="min-h">
+      <%= yield %>
+    </div>
+
+    <%= render 'shared/footer' %>
+
   </body>
 </html>

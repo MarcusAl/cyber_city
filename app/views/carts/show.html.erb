@@ -1,34 +1,39 @@
 <%= render 'shared/navbar' %>
-<div class="container bg-dark justify-content-center d-flex mt-5 cart-container">
-  <div class="row py-4 mt-5">
+<div class=" d-flex cart-container">
+  <div class="row py-4">
     <%# Cart Image Here %>
     <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
     <div class="col">
       <% if @cart.state == "pending" %>
-          <h1 class="text-white">Your Cart <small><span class="badge text-white-50 badge-success"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+          <h1 class="text-white py-3">Shopping Basket <small><span class="badge text-white-50 badge-success ml-3"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
       <% else %>
-          <h1 class="text-white">Your Cart <small><span class="badge text-white badge-secondary"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+          <h1 class="text-white py-3">Shopping Basket <small><span class="badge text-white badge-secondary ml-3"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
       <% end %>
-      <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
-        <% @cart.products.each do |product| %>
-          <li><strong>PRODUCT</strong> <%= product.name %> [<%= humanized_money_with_symbol product.price %>]</li>
-        <% end %>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @total %></li>
-      </ul>
-      <%# Delete A Product %>
-      <p>Total Products: <strong><%= @cart.products.length %></strong></p>
-        <% @cart_products.each do |cart_product| %>
-          <%= cart_product.product.name %>
-          <%= link_to "Delete", cart_product_path(cart_product), method: :delete %>
-        <% end %>
-      <%# Buttons %>
-      <div class="d-inline-flex justify-content-between">
-        <div class="col-4">
-          <%= link_to "Confirm", confirm_cart_path(@cart), method: :put %>
+      <ul class="list-unstyled mt-3">
+        <%# <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
+        <div class="d-inline-flex justify-content-between w-100 border-bottom">
+          <li>Product</li>
+          <li>Price</li>
         </div>
-        <div class="col-8">
-          <%= link_to "Empty Cart", cart_path(@cart), method: :delete %>
+
+        <%# Loop Through Each Product %>
+          <% @cart_products.each do |cart_product| %>
+            <div class="d-inline-flex justify-content-between w-100">
+            <li class="my-2"><%= cart_product.product.name %></li>
+            <li class="my-2"><%= link_to "Delete", cart_product_path(cart_product), method: :delete, class: 'text-white text-decoration-none' %></li>
+            <li class="my-2"><%= humanized_money_with_symbol cart_product.product.price %></li>
+            </div>
+          <% end %>
+        
+        <li><strong>Subtotal:</strong> <%= humanized_money_with_symbol @total %></li>
+      </ul>
+      <%# Buttons %>
+      <div class="d-flex align-self-start">
+        <div class="col-4 px-0 mt-3">
+          <%= link_to "Confirm", confirm_cart_path(@cart), method: :put, class: 'btn btn-alert btn-outline-success text-white' %>
+        </div>
+        <div class="col-8 px-0 mt-3">
+          <%= link_to "Empty Cart", cart_path(@cart), method: :delete, class: 'btn btn-alert btn-outline-success text-white' %>
         </div>
       </div>
     </div>

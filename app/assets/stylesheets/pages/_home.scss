@@ -197,16 +197,21 @@ margin-bottom: 10px;
 }
 
 .cart-container {
-  background: rgba( 244, 240, 240, 1 );
+  // background: #b2ccfe;
+  background: #86BBD8;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   color: white;
+  border-radius: 25px;
+  padding: 50px;
+  margin-top: 20vh;
 }
 
 .cart-container::after {
   content: "";
+  opacity: 0.2;
   position: absolute;
-  top: -20rem;
+  top: -45rem;
   left: -15rem;
   border-radius: 20px;
   width: 80%;

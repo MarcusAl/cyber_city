@@ -34,8 +34,11 @@ class DiagnosticsController < ApplicationController
     end
     @diagnostic = Diagnostic.new(@diagnostics_fomatted_results)
     @diagnostic.user = current_user
-    @diagnostic.save!
-    redirect_to diagnostic_path(@diagnostic)
+    if @diagnostic.save
+      redirect_to diagnostic_path(@diagnostic)
+    else
+      redirect_to root_path
+    end
   end
 
   private
@@ -48,6 +51,8 @@ class DiagnosticsController < ApplicationController
     uri = URI("https://www.immuniweb.com/websec/api/v1/get_result/#{@timestamp}.html")
     diagnostic = Net::HTTP.post_form(uri, 'id' => @test_id)
     diagnostic_results = JSON.parse(diagnostic.body)
+    return if diagnostic_results["error"]
+
     @diagnostics_fomatted_results = {
       score: diagnostic_results['score'],
       grade: diagnostic_results['grade'],
@@ -80,6 +85,8 @@ class DiagnosticsController < ApplicationController
       checker
     else
       diagnostic_results = JSON.parse(diagnostic.body)
+      return if diagnostic_results["error"]
+
       @diagnostics_fomatted_results = {
         score: diagnostic_results['score'],
         grade: diagnostic_results['grade'],

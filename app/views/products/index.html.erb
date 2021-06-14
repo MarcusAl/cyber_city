@@ -1,38 +1,39 @@
 <%= render 'shared/navbar' %>
 <div class="marketplace-container d-flex justify-content-between">
+  <div class="bg-white">
     <div class="filter-container bg-white pl-4 pr-4">
-        <a href="#" class= "filters" data-filter = ".Software-Security">Software Security</a>
-        <a href="#" class= "filters" data-filter = ".GDPR-compliance">GDPR compliance</a>
-        <a href="#" class= "filters" data-filter = ".PCI-DSS-Compliance">PCI DSS Compliance</a>
-        <a href="#" class= "filters" data-filter = ".HTTP-Headers-Security">HTTP Headers Security</a>
-        <a href="#" class= "filters" data-filter = ".Content-Security-Policy">Content Security Policy</a>
-        <a href="#" class= "filters" data-filter = ".Others">Others</a>
+      <div class="filter-category-menu">
+        <p class="category-header"><strong>Shop by category</strong></p>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".Software-Security"><p>Software Security</p></a>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".GDPR-compliance"><p>GDPR compliance</p></a>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".PCI-DSS-Compliance"><p>PCI DSS Compliance</p></a>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".HTTP-Headers-Security"><p>HTTP Headers Security</p></a>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".Content-Security-Policy"><p>Content Security Policy</p></a>
+        <a href="#" class= "filters" style="text-decoration: none;" data-filter = ".Others"><p>Others</p></a>
+      </div>
     </div>
+  </div>
 
         <div class="products-index-container justify-content-center">
             <% @products.each do |product| %>
-                    <a >
-
                 <div class="selected product-card-index-page <%=product.category %> category border-bottom">
-                        <div class="outer d-flex w-100">
-                            <span class="bg"><%= product.user.first_name.capitalize %> <%= product.user.last_name.capitalize %></span>
-                            <% if product.photos.attached? %>
-                                <%= cl_image_tag product.photos[0].key, alt: "alttext" %>
-                            <% else %>    
-                                <img class="cyber-image" src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" width="300px" class="animated fadeInRight mr-5">
-                            <% end %>
-                            <div class="content">
-                                <h1>
-                                    <a href="/products/<%=product.id %>" class="text-decoration-none">
-                                        <%= product.name.capitalize %>
-                                    </a>
-                                </h1>
-                                <p style=" white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= product.description %></p>
+                        <div class="products-index-page-card-container">
+                            <div class="products-index-page-card-image">
+                              <a href="/products/<%=product.id %>">
+                                <% if product.photos.attached? %>
+                                    <%= cl_image_tag product.photos[0].key, alt: "alttext" %>
+                                <% else %>
+                                    <img src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" width="300px">
+                                <% end %>
+                              </a>
                             </div>
-                            <div class="button cart-btn w-25">
-                                <a href="#"><%= product.price %></a>
-                                <%= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
+                            <div class="products-index-page-card-content">
+                              <a href="/products/<%=product.id %>" class="text-decoration-none"><p><strong><%= product.name.capitalize %></strong></p></a>
+                              <p>Category: <%= product.category %></p>
+                              <p><%= product.description.first(150)%>... </p>
                             </div>
+                            <a href="/products/<%=product.id %>" id="products-index-price"><h6><strong>£<%= product.price %></strong></h6></a>
+                            <%= link_to "Add product",  product_cart_products_path(product.id), method: :post, class: "button cart-btn", id: "products-index-add" %>
                         </div>
                 </div>
             <% end %>      
@@ -40,8 +41,19 @@
 </div>
 
 
-  
 
 
 
 
+<!-- <div class="content">
+                                <h1>
+                                    <a href="/products/<=product.id %>" class="text-decoration-none">
+                                        <= product.name.capitalize %>
+                                    </a>
+                                </h1>
+                                <p style=" white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><= product.description %></p>
+                            </div>
+                            <div class="button cart-btn w-25">
+                                <a href="#"><= product.price %></a>
+                                <= link_to "Add product",  product_cart_products_path(product.id), method: :post %>
+                            </div> -->

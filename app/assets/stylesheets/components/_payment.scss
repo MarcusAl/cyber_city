@@ -1,0 +1,37 @@
+#payment-page {
+  overflow: hidden;
+}
+
+#payment-container {
+  width: 80%;
+  margin: 100px auto;
+  padding: 50px;
+}
+
+#payment-container::before {
+  content: "";
+  position: absolute;
+  top: -20rem;
+  left: 45rem;
+  border-radius: 20px;
+  width: 30%;
+  height: 85rem;
+  background: linear-gradient(to top, rgba(250, 69, 250, 0.1), transparent);
+  transform: skew(-20deg);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.1);
+  z-index: -2;
+}
+
+
+.light-border {
+  border: solid 1px #888;
+  border-radius: 25px;
+}
+
+.light-border-bottom {
+  border-bottom: solid 1px #888;
+}

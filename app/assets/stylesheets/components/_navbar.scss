@@ -27,5 +27,13 @@
 }
 
 .my-nav-cart {
-  font-size: 22px;
+  font-size: 20px;
+}
+
+#logo-icon:hover,
+.my-nav-cart:hover,
+#nav-logo-text:hover {
+  color: #eee !important;
+  transition: 400ms;
+  transition-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }

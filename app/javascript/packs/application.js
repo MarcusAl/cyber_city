@@ -14,16 +14,6 @@ require("jquery")
 // require("jquery3")
 // require("jquery_ujs")
 
-$('.filter-container a').on('click', function() {
-  console.log('click');
-  const filter = $(this).attr('data-filter')
-  $('.category').hide()
-  $(filter).show()
-  $('.filter-container a').removeClass('selected')
-  $(this).addClass('selected')
-  return false;
-})
-
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
@@ -41,9 +31,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
  import { filterMethod } from '../components/filter';
+ import { initMap } from '../components/init_maps';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   filterMethod();
+  if (document.querySelector('#chartdiv')) {
+    initMap();
+  }
 });

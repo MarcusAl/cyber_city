@@ -1,0 +1,21 @@
+.log-in-container {
+  max-width: 40%;
+  margin: 100px auto;
+  padding: 32px;
+  border-radius: 16px;
+  background-color: white;
+  h2 {
+    margin-bottom: 24px;
+  }
+}
+
+.login-submit-button {
+  padding: 6px 16px;
+  border-radius: 2px;
+  background-color: #ffcb57;
+  margin-bottom: 16px;
+  transition: 0.2s;
+  &:hover {
+    background-color: #FDDD77;
+  }
+}

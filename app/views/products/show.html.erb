@@ -1,7 +1,67 @@
 <%= render 'shared/navbar' %>
-<h2><%= @product.name %></h2>
-<p><%= @product.description %></p>
-<p><%= @product.category %></p>
+<br>
+<br>
+<br>
 
 
- <%= link_to "Add product",  product_cart_products_path(@product), method: :post %>
+<div class="showpage-product-container">
+
+  <div class="showpage-product-page-card-container">
+
+    <div class="showpage-product-page-card-image">
+      <img src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" width="300px">
+   </div>
+
+    <div class="showpage-product-page-card-content">
+      <h2 class="showpage-hd"><%= @product.name.capitalize %></h2>
+      <p class="showpage-des"><%= @product.description %></p>
+      <p><strong>Category:</strong> <%= @product.category %></p>
+      <h6 class="showpage-product-price"><strong>£<%= @product.price %></strong></h6>
+      <%= link_to "Add product",  product_cart_products_path(@product), method: :post, class: "button cart-btn", id: "showpage-index-add" %>
+    </div>
+
+  </div>
+
+    <div class="testimonial-heading">
+      <span>Comments</span>
+      <h2>Customer says</h2>
+    </div>
+
+    <div class="testimonial-box-container">
+      <div class="testimonial-box">
+        <div class="box-top">
+
+          <div class="profile">
+            <div class="div-left">
+              <div class="profile-img">
+                <img src="https://static.photocdn.pt/images/articles/2019/08/07/images/articles/2019/07/31/good_linkedin_photo.jpg">
+              </div>
+              <div class="name-user">
+                <strong>Sandra</strong>
+                <span>@Sandra.90</span>
+              </div>
+            </div>
+            <div class="div-right">
+
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+
+              <div class="client-comment">
+                <p>This company does an absolutely amazing job. Got the work done quickly and efficiently.</p>
+              </div>
+
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+</div>
+

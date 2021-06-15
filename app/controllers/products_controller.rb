@@ -3,8 +3,11 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @products = Product.all
-
+    if params[:query].present?
+      @products = Product.search_by_name_and_description(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -37,6 +40,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price, :category, :photos)
   end
-
 end
 

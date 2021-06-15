@@ -33,7 +33,7 @@
                             <div class="products-index-page-card-image">
                               <a href="/products/<%=product.id %>">
                                 <% if product.photos.attached? %>
-                                    <%= cl_image_tag product.photos[0].key, alt: "alttext" %>
+                                    <%= cl_image_tag product.photos[0].key, alt: "alttext", style: "width: 300px;" %>
                                 <% else %>
                                     <img src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" width="300px">
                                 <% end %>

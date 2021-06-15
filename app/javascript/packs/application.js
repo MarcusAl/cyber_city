@@ -30,6 +30,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { filterMethod } from '../components/filter';
+import { initCards } from "../components/init_cards"
 import { initMap } from '../components/init_maps';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,6 +39,9 @@ document.addEventListener('turbolinks:load', () => {
   filterMethod();
   if (document.querySelector('#chartdiv')) {
     initMap();
+  }
+  if (document.querySelector('.content_container')) {
+    initCards();
   }
   $('.filter-container a').on('click', function() {
     console.log('click');

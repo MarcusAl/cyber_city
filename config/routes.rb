@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :diagnostics, only: [:index, :show, :create]
   put '/carts/:id/confirm', to: 'carts#confirm', as: 'confirm_cart'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
+  get "/pages/try", to: "pages#try"
 end

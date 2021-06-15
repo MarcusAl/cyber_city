@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def show
     # @cart = Cart.find(params[:id])
-    @cart = Cart.find_or_create_by(state: :pending, user: current_user)
+    @cart = Cart.where(user: current_user).sort.last
     @cart_products = @cart.cart_products
     @total = 0
     @cart.products.each do |product|

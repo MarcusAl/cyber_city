@@ -1,7 +1,68 @@
 <%= render 'shared/navbar' %>
-<h2><%= @product.name %></h2>
-<p><%= @product.description %></p>
-<p><%= @product.category %></p>
+<br>
+<br>
+<br>
 
 
- <%= link_to "Add product",  product_cart_products_path(@product), method: :post %>
+<div class="showpage-product-container">
+
+  <div class="showpage-product-page-card-container mx-auto w-75">
+
+    <div class="showpage-product-page-card-image">
+      <% if @product.photos.attached? %>
+          <%= cl_image_tag @product.photos[0].key, alt: "alttext" %>
+      <% else %>
+          <img src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" width="300px">
+      <% end %>
+   </div>
+
+    <div class="showpage-product-page-card-content">
+      <h2 class="showpage-hd"><%= @product.name %></h2>
+      <p><strong>Category:</strong> <%= @product.category %></p>
+      <p class="showpage-des"><%= @product.description %></p>
+      <h6 class="showpage-product-price"><strong>£<%= @product.price %></strong></h6>
+      <%= link_to "Add product",  product_cart_products_path(@product), method: :post, class: "button cart-btn", id: "showpage-index-add" %>
+    </div>
+
+  </div>
+
+    <div class="testimonial-heading">
+      <span>Comments</span>
+      <h2>Customer says</h2>
+    </div>
+    <div class="testimonial-box-container">
+    <% @reviews.each do |review| %>
+      <div class="testimonial-box">
+        <div class="box-top">
+
+          <div class="profile">
+            <div class="div-left">
+            
+              <div class="name-user">
+                <strong><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></strong>
+                <span>@<%= review.user.first_name %></span>
+              </div>
+            </div>
+            <div class="div-right">
+
+            <div class="reviews">
+              <%review.rating.to_i.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+
+              <div class="client-comment">
+                <p><%= review.content %></p>
+              </div>
+
+            </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+</div>
+

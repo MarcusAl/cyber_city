@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @diagnostic = Diagnostic.new
   end
+
+  def try
+  end
 end

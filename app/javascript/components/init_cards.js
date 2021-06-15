@@ -36,14 +36,14 @@ export const initCards = () => {
 
   // New Scene
 
-  animateIn2.fromTo('.newscontainer', 2, { scale:1.5 }, { xPercent:100, scale:1, transformOrigin: '0% 100%', ease: Elastic.easeOut })
+  animateIn2.fromTo('.newscontainer', 2, { scale:1.5 }, { xPercent:100, scale:1, transformOrigin: '0% 50% 100%', ease: Elastic.easeOut })
 
-  .from('.cyber-btn', 1, { scaleY:0, transformOrigin: 'bottom left' }, '-=2')
+  .from('.serviceBox', 1, { scaleY:0, transformOrigin: 'bottom left' }, '-=2')
 
   // Make scrollMagic Scene
 
   var scene2 = new ScrollMagic.Scene({
-    triggerElement: '.news-container'
+    triggerElement: '.services'
     // When we scroll to .cards then it will setTween/activate the animateIn
     // Make sure the correct scripts are imported in html or it won't work
   })

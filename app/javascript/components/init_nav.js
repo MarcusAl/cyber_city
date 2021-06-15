@@ -1,14 +1,17 @@
-(function ($) {
+export const navScroll = () => {
+    let scrollpos = window.scrollY
+    const header = document.querySelector(".navbar-lewagon")
+    const header_height = header.offsetHeight
 
-  // Navbar scroll functions
-  $(window).scroll(function(e) {
-  // add/remove class to navbar when scrolling to hide/show
-  var scroll = $(window).scrollTop();
-  if (scroll >= 100) {
-      $('.navbar').removeClass("navbar-hide");
-  } else {
-      $('.navbar').addClass("navbar-hide");
-  }
-  });
-  
-  })(jQuery);
+    const add_class_on_scroll = () => header.classList.add("fade-in")
+    const remove_class_on_scroll = () => header.classList.remove("fade-in")
+
+    window.addEventListener('scroll', function() { 
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= header_height) { add_class_on_scroll() }
+      else { remove_class_on_scroll() }
+
+      console.log(scrollpos)
+  })
+}

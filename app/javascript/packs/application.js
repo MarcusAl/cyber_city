@@ -32,10 +32,12 @@ import "bootstrap";
 import { filterMethod } from '../components/filter';
 import { initCards } from "../components/init_cards"
 import { initMap } from '../components/init_maps';
+import { navScroll } from '../components/init_nav';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  navScroll();
   filterMethod();
   if (document.querySelector('#chartdiv')) {
     initMap();

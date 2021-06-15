@@ -19,13 +19,16 @@
           %>
           <%= submit_tag "Search", class: "products-index-search-button" %>
         <% end %>
+        <p class="category-header"><strong>Shop by price</strong></p>
+        <p id="ascending" class="price-filter cursor">Ascending</p>
+        <p id="descending" class="price-filter cursor">Descending</p>
       </div>
     </div>
   </div>
 
         <div class="products-index-container justify-content-center">
             <% @products.each do |product| %>
-                <div class="selected product-card-index-page <%=product.category %> category border-bottom">
+                <div class="selected product-card-index-page <%=product.category %> category border-bottom" data-price="<%= product.price %>">
                         <div class="products-index-page-card-container">
                             <div class="products-index-page-card-image">
                               <a href="/products/<%=product.id %>">

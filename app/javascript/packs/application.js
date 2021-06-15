@@ -30,12 +30,16 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { filterMethod } from '../components/filter';
+import { filterPrice } from '../components/filter';
 import { initMap } from '../components/init_maps';
+import { priceSort } from '../components/price_sort';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  priceSort();
   filterMethod();
+  filterPrice();
   if (document.querySelector('#chartdiv')) {
     initMap();
   }

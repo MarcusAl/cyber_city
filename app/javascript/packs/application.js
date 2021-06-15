@@ -33,10 +33,12 @@ import { filterMethod } from '../components/filter';
 import { initCards } from "../components/init_cards"
 import { initMap } from '../components/init_maps';
 import { navScroll } from '../components/init_nav';
+import { myHover } from '../components/myHover';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  myHover();
   navScroll();
   filterMethod();
   if (document.querySelector('#chartdiv')) {

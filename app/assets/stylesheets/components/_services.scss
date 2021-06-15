@@ -15,7 +15,7 @@
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  margin: 10px;
+  margin: 25px;
   border: solid 3px rgba(100, 100, 100, 0.8);
   position: relative;
 }
@@ -147,13 +147,12 @@
 
 .serviceBoxInner {
   height: 30px;
-  width: 30%;
+  width: 20rem;
   display: flex;
   justify-content: center;
   text-align: center;
   word-break: normal;
   overflow-wrap: normal;
-  z-index: 10;
 }
 
 .serviceBoxInner a p {
@@ -166,6 +165,9 @@
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   z-index: 10;
+  box-shadow:
+      12px 12px 16px 0 rgba(100, 100, 100, 0.1) inset,
+      -8px -8px 12px 0 rgba(0, 0, 0, .35) inset;
 }
 
 .serviceBoxInner a {

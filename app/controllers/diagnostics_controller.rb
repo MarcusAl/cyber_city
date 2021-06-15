@@ -10,6 +10,13 @@ class DiagnosticsController < ApplicationController
 
   def show
     @diagnostic = Diagnostic.find(params[:id])
+
+    @markers = [{
+      lat: @diagnostic.lat,
+      lng: @diagnostic.lng,
+      # info_window: render_to_string(partial: "info_window", locals: { court: @diagnostic }),
+      # image_url: helpers.asset_url('map-marker3')
+    }]
   end
 
   def create
@@ -63,7 +70,8 @@ class DiagnosticsController < ApplicationController
       gdpr_compliance: "No Issues Found",
       lat: "0.1246",
       lng: "51.5007",
-      city: "London",
+      server_location: 'London, England',
+      server_ip: '192.175.111.230',
       http_header_scores_description: "Some HTTP headers related to security and privacy are missing or misconfigured.",
       http_header_scores_colour: "orange",
       csp_scores_description: "No Issues Found",
@@ -87,7 +95,8 @@ class DiagnosticsController < ApplicationController
       gdpr_compliance: diagnostic_results['compliance_gdpr'],
       lat: diagnostic_results['lat'],
       lng: diagnostic_results['lng'],
-      city: diagnostic_results['city'],
+      server_location: diagnostic_results['server_location'],
+      server_ip: diagnostic_results['server_ip'],
       http_header_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
       http_header_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
       csp_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
@@ -121,7 +130,8 @@ class DiagnosticsController < ApplicationController
           gdpr_compliance: "No Issues Found",
           lat: "0.1246",
           lng: "51.5007",
-          city: "London",
+          server_location: 'London, England',
+          server_ip: '192.175.111.230',
           http_header_scores_description: "Some HTTP headers related to security and privacy are missing or misconfigured.",
           http_header_scores_colour: "orange",
           csp_scores_description: "No Issues Found",
@@ -133,30 +143,30 @@ class DiagnosticsController < ApplicationController
           pci_dss_scores_description: "No WAF was detected on the website. Implement a WAF to protect the website against common web attacks.",
           pci_dss_scores_colour: "red"
           }
-    
-    else
-      @diagnostics_fomatted_results = {
-        score: diagnostic_results['score'],
-        grade: diagnostic_results['grade'],
-        tested_url: diagnostic_results['tested_url'],
-        firewalled: diagnostic_results['is_firewalled'],
-        pci_compliance: diagnostic_results['compliance_pci_dss'],
-        gdpr_compliance: diagnostic_results['compliance_gdpr'],
-        lat: diagnostic_results['lat'],
-        lng: diagnostic_results['lng'],
-        city: diagnostic_results['city'],
-        http_header_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
-        http_header_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
-        csp_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
-        csp_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
-        gdpr_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
-        gdpr_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
-        app_scan_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
-        app_scan_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
-        pci_dss_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
-        pci_dss_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class']
-      }
-    end
+      else
+        @diagnostics_fomatted_results = {
+          score: diagnostic_results['score'],
+          grade: diagnostic_results['grade'],
+          tested_url: diagnostic_results['tested_url'],
+          firewalled: diagnostic_results['is_firewalled'],
+          pci_compliance: diagnostic_results['compliance_pci_dss'],
+          gdpr_compliance: diagnostic_results['compliance_gdpr'],
+          lat: diagnostic_results['lat'],
+          lng: diagnostic_results['lng'],
+          server_location: diagnostic_results['server_location'],
+          server_ip: diagnostic_results['server_ip'],
+          http_header_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+          http_header_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+          csp_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+          csp_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+          gdpr_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+          gdpr_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+          app_scan_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+          app_scan_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class'],
+          pci_dss_scores_description: diagnostic_results['internals']['scores']['http_headers']['description'],
+          pci_dss_scores_colour: diagnostic_results['internals']['scores']['http_headers']['class']
+        }
+      end
     end
   end
 end

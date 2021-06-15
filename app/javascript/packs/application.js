@@ -33,10 +33,12 @@ import { filterMethod } from '../components/filter';
 import { filterPrice } from '../components/filter';
 import { initMap } from '../components/init_maps';
 import { priceSort } from '../components/price_sort';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
   priceSort();
   filterMethod();
   filterPrice();

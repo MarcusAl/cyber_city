@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_113218) do
+ActiveRecord::Schema.define(version: 2021_06_15_153252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 2021_06_15_113218) do
     t.boolean "gdpr_compliance"
     t.float "lat"
     t.float "lng"
-    t.string "city"
     t.string "http_header_scores_description"
     t.string "csp_scores_description"
     t.string "gdpr_scores_description"
@@ -84,6 +83,8 @@ ActiveRecord::Schema.define(version: 2021_06_15_113218) do
     t.string "gdpr_scores_colour"
     t.string "app_scan_scores_colour"
     t.string "pci_dss_scores_colour"
+    t.string "server_location"
+    t.string "server_ip"
     t.index ["user_id"], name: "index_diagnostics_on_user_id"
   end
 

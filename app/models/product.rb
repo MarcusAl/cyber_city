@@ -18,4 +18,14 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   monetize :price_cents
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+    against: {
+      name: 'A',
+      description: 'B'
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

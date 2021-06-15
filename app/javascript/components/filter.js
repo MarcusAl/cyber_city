@@ -10,4 +10,16 @@ const filterMethod = () => {
     });
 };
 
-export {filterMethod};
+const filterPrice = () => {
+    const filterPriceLinks = document.querySelectorAll('.price-filter')
+    filterPriceLinks.forEach((filter)=>{
+      filter.addEventListener('click', (event) => {
+        filterPriceLinks.forEach((filter)=>{
+        filter.classList.remove('active-filter');
+        console.log(event.currentTarget.classList.add('active-filter'));
+      });
+      });
+    });
+};
+
+export {filterMethod, filterPrice};

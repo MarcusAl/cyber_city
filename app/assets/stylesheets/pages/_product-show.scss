@@ -27,7 +27,7 @@
   width: 50%;
   padding-top: 4px;
   margin-left: 30px;
-  margin-top: 32px;
+  margin-top: 5px;
   p {
     margin-right: 0px;
     width: 70%;
@@ -41,18 +41,24 @@
   p {
     color: white;
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 100%;
   }
   h2{
     border-bottom: 1px solid whitesmoke;
+    padding-bottom: 8px;
   }
 }
 
+
+
 .showpage-product-price {
-  position: absolute;
+  // position: absolute;
   bottom: 32px;
   right: 160px;
   text-decoration: none;
-  h6 {
+  h4 {
+    right: 30px;
     margin: 0;
     padding: 2px;
     color: #454545;
@@ -61,14 +67,16 @@
 }
 
 #showpage-index-add {
-  position: absolute;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 25%;
+  // position: absolute;
   text-decoration: none;
   margin: 0;
-  padding: 8px 16px;
+  // padding: 8px 16px;
   background-color: #ffc659;
   color: white;
-  bottom: 24px;
-  right: 24px;
   border-radius: 2px;
   &:hover {
     background-color: #ffc419;

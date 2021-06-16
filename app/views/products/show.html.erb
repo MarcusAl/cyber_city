@@ -19,10 +19,11 @@
     <div class="showpage-product-page-card-content">
       <h2 class="showpage-hd"><%= @product.name %></h2>
       <p><strong>Category:</strong> <%= @product.category %></p>
+      <h4 class="showpage-product-price"><strong>£<%= @product.price %></strong></h4>
       <p class="showpage-des"><%= @product.description %></p>
-      <h6 class="showpage-product-price"><strong>£<%= @product.price %></strong></h6>
-      <%= link_to "Add product",  product_cart_products_path(@product), method: :post, class: "button cart-btn", id: "showpage-index-add" %>
+      <%= link_to "Add product",  product_cart_products_path(@product), method: :post, id: "showpage-index-add" %>
     </div>
+
 
   </div>
 
@@ -37,7 +38,7 @@
 
           <div class="profile">
             <div class="div-left">
-            
+
               <div class="name-user">
                 <strong><%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></strong>
                 <span>@<%= review.user.first_name %></span>

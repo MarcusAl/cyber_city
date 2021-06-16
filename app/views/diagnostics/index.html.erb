@@ -1,17 +1,27 @@
 <%= render 'shared/navbar' %>
 <div class="diagnostics-index-page">
   <div class="main-page-container unset-height">
-    <h1>Your Diagnostics</h1>
+    <h1 class="diagnostix-index-title">Your Diagnostics</h1>
     <% @diagnostics.each do |diagnostic| %>
       <%= link_to diagnostic_path(diagnostic), class: 'btn text-decoration-none' do %>
-        <div class="diagnostic-card">
-          <div class="diagnostic-card-image">
-            <%= image_tag "https://media.istockphoto.com/vectors/unlock-icon-silhouette-vector-id600090774?k=6&m=600090774&s=612x612&w=0&h=HIkB4NQZ8nlzWxZybdsvMKEJJnAy0WWxCZhYQxjf90k=", alt: "alttext" %>
+        <div class="score-main-details">
+          <div class="test-image">
+            <% if diagnostic.score >= 90 %>
+              <%= image_tag "https://media.istockphoto.com/vectors/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-ok-vector-id1094780808?k=6&m=1094780808&s=612x612&w=0&h=U_-vy-la7Q8Mz7yzlXV4osQMQk8kY85YPNVpoQZgJX8=", alt: "alttext" %>
+            <% elsif diagnostic.score < 50 %>
+              <%= image_tag "https://t4.ftcdn.net/jpg/00/49/49/71/240_F_49497163_jzhcVIQ7NtHdBvJNFWChCXToIfLRYF57.jpg", alt: "alttext" %>
+            <% else %>
+              <%= image_tag "https://icones.pro/wp-content/uploads/2021/05/symbole-d-avertissement-orange.png", alt: "alttext" %>
+            <% end %>
           </div>
-          <div class="diagnostic-card-content">
-            <h5>See results of your diagnostic for <strong><%= diagnostic.tested_url %></strong> </h5>
-            <p>Overall Score: <%= diagnostic.score %> </p>
-            <p>Overall Grade: <%= diagnostic.grade %> </p>
+          <div class="test-details">
+            <h2>See results for <strong><%= diagnostic.tested_url %></strong> security test.</h2>
+            <p><strong>Grade:</strong> <%= diagnostic.grade %></p>
+            <p><strong>Score:</strong> <%= diagnostic.score %>/100</p>
+            <p><strong>Server IP:</strong> <%= diagnostic.server_ip %></p>
+            <p><strong>Server location:</strong> <%= diagnostic.server_location %></p>
+            <p><strong>Tested on: </strong> <%= diagnostic.created_at.strftime(" %d of %B, %Y, at %k:%M") %></p>
+            <%= link_to 'Marketplace', products_path, class: "btn marketplace-diagnostic-button" %>
           </div>
         </div>
       <% end %>

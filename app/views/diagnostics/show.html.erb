@@ -74,7 +74,9 @@
   <div class="map-marketplace">
     <div class="diagnostic-show-page-map">
       <div id="map" style="width: 100%; height: 100%;" data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['pk.eyJ1IjoiZmVsaXgtMjQyMyIsImEiOiJja3B5azNhNjYwbHBtMm9ud3R6Y3U4YmR3In0.02nuKOB471cKc83vTE9Vhg'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+       <h2 class="h2-map">Your server location</h2>
+     </div>
     </div>
     <div class="diagnostic-marketplace">
       <h1>Find Cyber Security Products</h1>

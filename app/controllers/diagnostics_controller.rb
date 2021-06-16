@@ -14,8 +14,7 @@ class DiagnosticsController < ApplicationController
     @markers = [{
       lat: @diagnostic.lat,
       lng: @diagnostic.lng,
-      # info_window: render_to_string(partial: "info_window", locals: { court: @diagnostic }),
-      # image_url: helpers.asset_url('map-marker3')
+      info_window: render_to_string(partial: "info_window", locals: { diagnostic: @diagnostic })
     }]
   end
 

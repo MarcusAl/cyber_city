@@ -43,11 +43,13 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  myHover();
   navScroll();
   priceSort();
   filterMethod();
   filterPrice();
+  if (document.querySelector('.horizontal-timeline')) {
+     myHover();
+  }
   if (document.querySelector('#chartdiv')) {
     initMap();
   }

@@ -30,20 +30,29 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { filterMethod } from '../components/filter';
-import { filterPrice } from '../components/filter';
+import { initCards } from "../components/init_cards"
 import { initMap } from '../components/init_maps';
+import { navScroll } from '../components/init_nav';
+import { myHover } from '../components/myHover';
+import { filterPrice } from '../components/filter';
 import { priceSort } from '../components/price_sort';
 import { initMapbox } from '../plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  myHover();
+  navScroll();
   priceSort();
   filterMethod();
   filterPrice();
   if (document.querySelector('#chartdiv')) {
     initMap();
+  }
+  if (document.querySelector('.content_container')) {
+    initCards();
   }
   $('.filter-container a').on('click', function() {
     console.log('click');

@@ -9,7 +9,7 @@ class CartProductsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find_by(user: current_user)
+    @cart = Cart.where(user: current_user).sort.last
     @cart_product = CartProduct.find(params[:id])
     @cart_product.destroy
     redirect_to cart_path(@cart)

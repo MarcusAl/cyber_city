@@ -1,0 +1,33 @@
+<%= render 'shared/navbar' %>
+<div class=" d-flex cart-container">
+  <div class="row py-4">
+    <%# Cart Image Here %>
+    <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
+    <div class="col">
+  
+          <h1 class="text-white py-3">Thank you for your order <small><span class="badge text-white badge-secondary ml-3"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+
+      <ul class="list-unstyled mt-3">
+        <%# <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
+        <div class="d-inline-flex justify-content-between w-100 border-bottom">
+          <li>Product</li>
+          <li>Price</li>
+        </div>
+
+        <%# Loop Through Each Product %>
+          <% @cart.cart_products.each do |cart_product| %>
+            <div class="d-inline-flex justify-content-between w-100">
+            <li class="my-2"><%= cart_product.product.name %></li>
+            <li class="my-2"><%= humanized_money_with_symbol cart_product.product.price %></li>
+            </div>
+          <% end %>
+
+        <li class="my-3"><strong>Total:</strong> <%= humanized_money_with_symbol @total %></li>
+      </ul>
+      <%# Buttons %>
+      <div class="d-flex align-self-start">
+      <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>

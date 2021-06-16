@@ -9,7 +9,7 @@
           <p class="text-white m-0 p-0">Purchase of <strong><%= product.name %></strong></p>
           <p class="m-0 p-0"><strong><%= humanized_money_with_symbol product.price %></strong></p>
           <% if product.photos.attached? %>
-            <%= cl_image_tag product.photos[0].key, alt: "alttext", class: "m-0 p-0" %>
+            <%= cl_image_tag product.photos[0].key, alt: "alttext", class: "m-0 p-0", style: "width: 300px;"%>
           <% else %>    
             <img src="https://www.ship-technology.com/wp-content/uploads/sites/16/2019/07/Cyber-credit-NSWC-Crane-Corporate-Communications.jpg" height="200px" width="150px" class="animated fadeInRight img-fluid">
           <% end %>

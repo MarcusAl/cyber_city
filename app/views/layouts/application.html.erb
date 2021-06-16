@@ -24,14 +24,16 @@
   </head>
 
   <body>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/nav_jscript' %>
+    <div class="main">
+      <%= render 'shared/flashes' %>
+      <%= render 'shared/nav_jscript' %>
 
-    <div class="min-h">
-      <%= yield %>
+      <div class="min-h">
+        <%= yield %>
+      </div>
+
+      <%= render 'shared/footer' %>    
     </div>
-
-    <%= render 'shared/footer' %>
 
   </body>
 </html>

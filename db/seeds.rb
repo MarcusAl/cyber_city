@@ -256,8 +256,10 @@ edi = User.create(email: "edi@test.com", first_name: "edi" , last_name: "LeWagon
 felix = User.create(email: "felix@test.com", first_name: "felix" , last_name: "LeWagon", password: "123456" )
 marcus = User.create(email: "marcus@test.com", first_name: "marcus" , last_name: "LeWagon", password: "123456" )
 spencer = User.create(email: "spencer@test.com", first_name: "spencer" , last_name: "LeWagon", password: "123456" )
+ife = User.create(email: "ife@test.com", first_name: "Ife" , last_name: "LeWagon", password: "123456" )
+sarah = User.create(email: "sarah@test.com", first_name: "Sarah" , last_name: "LeWagon", password: "123456" )
 
-
+user_array = [edi, felix, marcus, spencer, ife]
 
 # CATEGORIES = {
 #   'Software-Security': "",
@@ -267,8 +269,77 @@ spencer = User.create(email: "spencer@test.com", first_name: "spencer" , last_na
 #   'Content-Security-Policy': "",
 #   'Others': ""
 # }
-puts "Done with Users"
-puts "Start Products"
+puts "Users Done"
+puts "Start products"
+########################## Software-Security  ########################
+
+ss1 = Product.create( 
+  name: "Checkmarx",
+  description: "Checkmarx is the Software Exposure Platform for the enterprise. Over 1,400 organizations around the globe rely on Checkmarx to measure and manage software risk at the speed of DevOps. Checkmarx serves five of the world’s top 10 software vendors, four of the top American banks, and many government organizations and Fortune 500 enterprises, including SAP, Samsung, and Salesforce.com. ",
+  price_cents: 8000,
+  user_id: edi.id ,
+  category: "Software-Security",
+  )
+  file = URI.open("https://mms.businesswire.com/media/20200824005054/en/779913/23/Checkmarx-logo-2019-horizontal-4.jpg")
+  ss1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+ss2 = Product.create( 
+  name: "Veracode Application Security Platform",
+  description: "Veracode helps companies that innovate through software deliver secure code on time. Unlike on-premise solutions that are hard to scale and focused on finding rather than fixing, Veracode comprises a unique combination of SaaS technology and on-demand expertise that enables DevSecOps through integration with your pipeline,empower developers to fix security defects, and scales your program through best practices to achieve your desired outcomes.",
+  price_cents: 6000,
+  user_id: spencer.id ,
+  category: "Software-Security",
+  )
+  file = URI.open("https://i.ytimg.com/vi/6pp5EAha-U0/maxresdefault.jpg")
+  ss2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+ss3 = Product.create( 
+  name: "AttackFlow",
+  description: "AttackFlow is a solution helps find security and quality weaknesses in software by analyzing the code.",
+  price_cents: 4000,
+  user_id: felix.id ,
+  category: "Software-Security",
+  )
+  file = URI.open("https://cdn.slidesharecdn.com/ss_thumbnails/attackflowpitch-170512153445-thumbnail-4.jpg?cb=1494603328")
+  ss3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+ss4 = Product.create( 
+  name: "bugScout",
+  description: "Platform for detecting security vulnerabilities in applications by analyzing the source code. bugScout® is the most complete and versatile SAST platform on the market for detecting application security vulnerabilities through source code analysis. Designed by ethical hackers and reputable security auditors, bugScout® follows international security rules and standards and is at the forefront of cybercrime techniques to keep customer applications safe and secure.",
+  price_cents: 10000,
+  user_id: marcus.id ,
+  category: "Software-Security",
+  )
+  file = URI.open("https://i.ytimg.com/vi/QBlqllGYp-Q/maxresdefault.jpg")
+  ss4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+ss5 = Product.create( 
+  name: "Sentinel",
+  description: "WhiteHat Security is a leader and pioneer in the field of application security. We combine technology and human intelligence to deliver solutions that reduce risk, reduce cost and accelerate the deployment of secure applications and web sites.",
+  price_cents: 5000,
+  user_id: edi.id ,
+  category: "Software-Security",
+  )
+  file = URI.open("https://mms.businesswire.com/media/20190130005063/en/702961/23/WhiteHat_Logo_Secondary_COLOR_HiRes_copy.jpg")
+  ss5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  [ss1,ss2,ss3,ss4,ss5].each do |product|
+    Review.create(user_id: edi.id,
+    content: "This product was very good, I highly recommand it!",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+  [ss1,ss2,ss3,ss4,ss5].each do |product|
+    Review.create(user_id: sarah.id,
+    content: "I take couple of products from this website, I am not dissapointed with them , they work fine.",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+
+puts "Software Security Products and Reviews Done"
+############ GDPR ###########################
+
+
 gdpr1 = Product.create( 
   name: "SolarWinds Access Rights Manager",
   description: "SolarWinds Access Rights Manager is a user access monitoring tool that can be used to demonstrate GDPR compliance. SolarWinds Access Rights Manager monitors user access to personal data. The user can automate the provisioning and de-provisioning of user accounts to control who has access to sensitive information.",
@@ -276,10 +347,8 @@ gdpr1 = Product.create(
   user_id: edi.id ,
   category: "GDPR-compliance",
   )
-  file = URI.open("https://cdn.comparitech.com/wp-content/uploads/2019/11/solarwinds-access-right-manager--768x480.jpg")
+  file = URI.open("https://mms.businesswire.com/media/20201027006183/en/747820/22/SW_Logo_md.jpg")
   gdpr1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-puts "Finish first"
 
 gdpr2 = Product.create( 
   name: "Wired Relations",
@@ -288,10 +357,8 @@ gdpr2 = Product.create(
   user_id: spencer.id ,
   category: "GDPR-compliance",
   )
-  file = URI.open("https://cdn.comparitech.com/wp-content/uploads/2019/12/Wired-Relations-Privacy-Software-Dashboard.webp")
+  file = URI.open("https://wiredrelations.com/wordpress/wp-content/uploads/2020/09/Welcome-to-Wired-Relations.jpg")
   gdpr2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
-puts"etc"
 
 gdpr3 = Product.create( 
   name: "ManageEngine EventLog Analyzer",
@@ -300,7 +367,7 @@ gdpr3 = Product.create(
   user_id: felix.id ,
   category: "GDPR-compliance",
   )
-  file = URI.open("https://cdn.comparitech.com/wp-content/uploads/2019/11/ManageEngine-EventLog-Analyzer-768x378.jpg")
+  file = URI.open("https://golicense.net/wp-content/uploads/2020/04/manageengine-eventlog-analyzer-license-1.jpg")
   gdpr3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 gdpr4 = Product.create( 
@@ -320,16 +387,253 @@ gdpr5 = Product.create(
   user_id: edi.id ,
   category: "GDPR-compliance",
   )
-  file = URI.open("https://cdn.comparitech.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-24-at-17.35.30.jpg")
+  file = URI.open("https://i.ytimg.com/vi/OY1_lYFTDB4/maxresdefault.jpg")
   gdpr5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-puts "products done"
+
 
 [gdpr1,gdpr2,gdpr3,gdpr4,gdpr5].each do |product|
+  Review.create(user_id: ife.id,
+  content: "When I saw the test red, I quickly look through the products and took this one, I made no mistake, looking forward to buy more products from this website",
+  rating: (4..5).to_a.sample,
+  product_id: product.id)
+end
+[gdpr1,gdpr2,gdpr3,gdpr4,gdpr5].each do |product|
   Review.create(user_id: edi.id,
-  content: "Some Content",
+  content: "This service is DOPE, you may want to try it.",
   rating: 5,
   product_id: product.id)
 end
 
-puts "end"
+puts "GDPR Products and Reviews Done"
+
+########################## PCI DSS Compliance  ########################
+
+
+pci1 = Product.create( 
+  name: "Splunk Enterprise",
+  description: "Splunk is a network traffic analyzer in free and paid versions. The higher versions, Splunk Enterprise, and Splunk Cloud include IPS capabilities. The lower editions are Splunk Free and Splunk Light. The detection procedures of the tool include network traffic monitoring and log file analysis. The detection method searches for anomalies, which are patterns of unexpected behavior.",
+  price_cents: 8000,
+  user_id: edi.id ,
+  category: "PCI-DSS-Compliance",
+  )
+  file = URI.open("https://i.ytimg.com/vi/jq0wzH84EQI/maxresdefault.jpg")
+  pci1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+pci2 = Product.create( 
+  name: "Syxsense Manage",
+  description: "Syxsense Manage tracks down all of the devices connected to your network and then scans each for its OS version and software inventory. This system documents all OS and software versions on Windows, macOS, and Linux. It can include endpoints on remote sites and it is also able to manage IoT devices.",
+  price_cents: 6000,
+  user_id: spencer.id ,
+  category: "PCI-DSS-Compliance",
+  )
+  file = URI.open("https://www.syxsense.com/wp-content/uploads/2019/10/Syxsense-Manage-Featured-Image.jpg")
+  pci2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+pci3 = Product.create( 
+  name: "ManageEngine ADAudit Plus",
+  description: "ManageEngine ADAudit Plus is very good for implementing PCI DSS compliance and running audit reports to automatically prove your worthiness. This tool focuses on Active Directory, monitoring, and logging any changes to permissions recorded in AD. It will log user actions entering and exiting different systems. It tracks changes to audit file and folder permissions, which will alert you to intruder activity. You can archive alert data for up to three years and generate audit reports.",
+  price_cents: 4000,
+  user_id: felix.id ,
+  category: "PCI-DSS-Compliance",
+  )
+  file = URI.open("https://golicense.net/wp-content/uploads/2020/04/manageengine-adaudit-plus-license.jpg")
+  pci3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+pci4 = Product.create( 
+  name: "OSSEC",
+  description: "OSSEC is a free host-based intrusion detection system that features log file analysis and live log message processing. This tool has a great analytical engine, but a terrible front-end. However, there are many free data viewing tools that are compatible with OSSEC, such as Graylog, Splunk, and Kibana.",
+  price_cents: 10000,
+  user_id: marcus.id ,
+  category: "PCI-DSS-Compliance",
+  )
+  file = URI.open("https://perezbox.com/wp-content/uploads/2018/11/PerezBox-OSSECLogo-745x370.png")
+  pci4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+pci5 = Product.create( 
+  name: "OpenWIPS-NG",
+  description: "OpenWIPS-NG is made by the same people who produced Aircrack-NG, which is a famous hacker tool. This is a free wireless IPS for Linux. The system has three modules: a sensor, a server, and an interface. The sensor is a packet sniffer that passes network traffic to the server, which is where traffic analysis is performed.",
+  price_cents: 5000,
+  user_id: edi.id ,
+  category: "PCI-DSS-Compliance",
+  )
+  file = URI.open("https://warehouse-camo.ingress.cmh1.psfhosted.org/9bf63a36cc80de0fb1d0d3d33ed999204e6bb14c/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6f70656e776973702f6f70656e77697370322d646f63732f6d61737465722f6173736574732f64657369676e2f6f70656e776973702d6c6f676f2d626c61636b2e737667")
+  pci5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  [pci1,pci2,pci3,pci4,pci5].each do |product|
+    Review.create(user_id: marcus.id,
+    content: "This product was very good, I highly recommand it!",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+  [pci1,pci2,pci3,pci4,pci5].each do |product|
+    Review.create(user_id: spencer.id,
+    content: "I am pleased with the acqusition of this product.",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+
+  puts "PCI Products and Reviews Done"
+  ########################## HTTP Headers Security  ########################
+
+
+hh1 = Product.create( 
+  name: "Cloudflare Worker",
+  description: "In short, Cloudflare workers allow you to deploy and run code at Cloudflare's edge to apply custom processing to requests and responses to your site. We already use Workers a lot at Report URI and Security Headers is now launching this Worker to help sites deploy security headers.",
+  price_cents: 1000,
+  user_id: edi.id ,
+  category: "HTTP-Headers-Security",
+  )
+  file = URI.open("https://scotthelme.co.uk/content/images/2018/03/workers-social.png")
+  hh1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+hh2 = Product.create( 
+  name: "KeyCDN",
+  description: "KeyCDN is a high performance content delivery network that has been built for the future. It only takes a few minutes to start delivering content to your users at a blazing fast speed.",
+  price_cents: 2000,
+  user_id: spencer.id ,
+  category: "HTTP-Headers-Security",
+  )
+  file = URI.open("https://www.keycdn.com/img/og-image.png")
+  hh2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+hh3 = Product.create( 
+  name: "LoginRadius",
+  description: "LoginRadius empowers businesses to deliver a delightful customer experience and win customer trust. Using the LoginRadius Identity Platform, companies can offer a streamlined login process while protecting customer accounts and complying with data privacy regulations.",
+  price_cents: 4000,
+  user_id: felix.id ,
+  category: "HTTP-Headers-Security",
+  )
+  file = URI.open("https://www.loginradius.com/blog/start-with-identity/static/ceb3e74c4c96c224a217049a0935b873/a3513/Announcing-New-Look-of-LoginRadius.png")
+  hh3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+hh4 = Product.create( 
+  name: "InterWebDEFENCE",
+  description: "Cyberattacks are rising at an all time high.
+  In the UK alone 87% of small businesses suffered a security breach in 2019. Hacks happen due to lack of website upkeep and protection, like updating WordPress or plugins, plus using weak passwords.Contrary to popular belief, web designers and website hosting companies are not responsible for the security of your WordPress website; you are. It’s like using your computer without Anti-virus!",
+  price_cents: 10000,
+  user_id: marcus.id ,
+  category: "HTTP-Headers-Security",
+  )
+  file = URI.open("https://www.southampton.co.uk/GetBusinessUserPhoto.aspx?size=full&bpid=12697")
+  hh4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+hh5 = Product.create( 
+  name: "PLURALSIGHT",
+  description: "Security is all about defense in depth: applying layer upon layer of security controls such that any one single failure does not lead to a compromise of the application. One of those layers is the browser itself, which is becoming increasingly intelligent when it comes to implementing defenses. Security headers are a way of telling the browser how a website may behave when it’s loaded into the client. They provide numerous defenses against a variety of attacks in ways that have not previously been possible with security controls that ran solely on the server. In this course, we’ll walk through a number of essential security headers that provide even greater levels of defense for web applications. We’ll look at how they’re intended to work, what attacks they protect against, and how you can easily implement them in your website.",
+  price_cents: 5000,
+  user_id: edi.id ,
+  category: "HTTP-Headers-Security",
+  )
+  file = URI.open("https://jamiemaguire.net/wp-content/uploads/2020/02/2020-02-04_14-11-53.png")
+  hh5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  [hh1,hh2,hh3,hh4,hh5].each do |product|
+    Review.create(user_id: ife.id,
+    content: "Give it a try, you may be surprise.",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+  [hh1,hh2,hh3,hh4,hh5].each do |product|
+    Review.create(user_id: felix.id,
+    content: "This product is no joke, is getting the job done!",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+
+  puts "Security Headers Products and Reviews Done"
+  ########################## Content-Security-Policy ########################
+
+
+cs1 = Product.create( 
+  name: "RapidSec",
+  description: "Monitor the CSP reports coming from your Client-Side. Get real-time alerts on new assets being loaded in your site, and to identify potential attacks with visibility on suspicious events occurring on your user's browsers. Analyze the data with RapidSec's powerful analytics reports and dashboards.",
+  price_cents: 900,
+  user_id: edi.id ,
+  category: "Content-Security-Policy",
+  )
+  file = URI.open("https://rapidsec.com/static/og-images/default_1200.png")
+  cs1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+cs2 = Product.create( 
+  name: "URIports",
+  description: "URIports is an advanced unified tool to monitor web and mail server security and configuration. URIports is the result of our decades of experience in online coding, monitoring, and security. When the system is configured, we receive reports from your site visitors’ browsers and mail servers. We process all these reports and provide you with insights into what's happening.Bundled, prioritized & crystal clear.",
+  price_cents: 500,
+  user_id: spencer.id ,
+  category: "Content-Security-Policy",
+  )
+  file = URI.open("https://www.uriports.com/blog/content/images/2019/06/URIports-Notifications-Blog-4.png")
+  cs2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+cs3 = Product.create( 
+  name: "PegaAcademy",
+  description: "Content security policies (CSP) are used as a security layer to protects your browser from loading and running content from untrusted sources.CSPs are a set of directives that define approved content sources that the user's browser may load.",
+  price_cents: 1000,
+  user_id: felix.id ,
+  category: "Content-Security-Policy",
+  )
+  file = URI.open("https://community.pega.com/sites/default/files/styles/1024/public/media/images/2018-04/Pega_Academy_Logo_0.jpg?itok=UGPS9jyf")
+  cs3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+cs4 = Product.create( 
+  name: "Reflectiz",
+  description: "With millions of buyers escalating their online activity ahead of Black Friday and the holiday season, it’s important for eCommerce websites and online businesses to combat Magecart and web-skimming issues in a proactive and relentless manner. Can the proven and tested Content Security Policy (CSP) get the job done?",
+  price_cents: 2500,
+  user_id: marcus.id ,
+  category: "Content-Security-Policy",
+  )
+  file = URI.open("https://aithority.com/wp-content/uploads/2020/12/Reflectiz-Raises-Over-5-Million-in-Series-A-Funding-Round-Led-by-Capri-Ventures-to-Transform-Third-Party-Application-Security.jpg")
+  cs4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  [cs1,cs2,cs3,cs4].each do |product|
+    Review.create(user_id: marcus.id,
+    content: "This product was very good, I highly recommand it!",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+
+  [cs1,cs2,cs3,cs4].each do |product|
+    Review.create(user_id: sarah.id,
+    content: "I think this product really helped me to solve my problem, worth try!",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+  puts "Content Security Policy Products and Reviews Done"
+  ########################## Other  ########################
+
+
+o1 = Product.create( 
+  name: "Acronis Cyber Protect - Backup / Cloud Storage",
+  description: "Acronis Cyber Protect goes beyond business-grade backup and cloud storage by adding advanced security and device management features that are especially useful now that so many businesses are supporting remote workers.",
+  price_cents: 1500,
+  user_id: edi.id ,
+  category: "Others",
+  )
+  file = URI.open("https://sm.pcmag.com/t/pcmag_uk/review/a/acronis-cy/acronis-cyber-protect_qu6v.1920.jpg")
+  o1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+o2 = Product.create( 
+  name: "CrashPlan for Small Business - Backup / Cloud Storage",
+  description: "For businesses that need quick and reliable cloud backups for desktops, laptops, and servers, CrashPlan for Small Business should do well since it's uncomplicated and secure. For most other needs, however, you may have to keep looking.",
+  price_cents: 2000,
+  user_id: edi.id ,
+  category: "Others",
+  )
+  file = URI.open("https://sm.pcmag.com/t/pcmag_uk/review/c/crashplan-/crashplan-for-small-business_7t5r.1920.jpg")
+  o2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+  [o1,o2].each do |product|
+    Review.create(user_id: ife.id,
+    content: "I use it daily, worked fine till now.",
+    rating: (3..5).to_a.sample,
+    product_id: product.id)
+  end
+
+  [o1,o2].each do |product|
+    Review.create(user_id: felix.id,
+    content: "Highly recommand, is getting the job done",
+    rating: 5,
+    product_id: product.id)
+  end
+
+  puts "All Done"

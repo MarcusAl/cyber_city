@@ -6,7 +6,7 @@ class Diagnostic < ApplicationRecord
   validates :firewalled, presence: true
   validates :lat, presence: true
   validates :lng, presence: true
-  validates :city, presence: true
+  validates :server_location, presence: true
   validates :http_header_scores_description, presence: true
   validates :http_header_scores_colour, presence: true
   validates :csp_scores_description, presence: true

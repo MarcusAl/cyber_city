@@ -1,174 +1,210 @@
-/*SERVICES */
 
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  width: 100%;
+
+div.container_scroll {
   margin: 0 auto;
-  position: relative;
-
-}
-
-.serviceBox {
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-  margin: 25px;
-  position: relative;
-}
-
-// .serviceBox:hover {
-//   filter: bright;
-// }
-
-.serviceBox:first-child {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/E161/production/_118879675_gettyimages-1232488126.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-  
-}
-
-.serviceBox:nth-child(2) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/E6D9/production/_118879095_eredc.png");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(3) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/13144/production/_118784187_067315709.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(4) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/2857/production/_118572301_screenshot2021-05-19at14.42.44.png");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(5) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/1525A/production/_118481668_gettyimages-1232825380.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(6) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/14A28/production/_118502548_colonial-pipeline3.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(7) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/2831/production/_118398201_smartcity2.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(8) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/26CA/production/_118603990_router-1.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(9) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/17765/production/_118610169_gettyimages-1197122310.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(10) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/172C0/production/_118221949_gettyimages-456028116-1.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(11) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/16A70/production/_117548729_microsoft-emails-2-1.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(12) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/1410A/production/_118168128_gettyimages-1229893442.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(13) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/769D/production/_117856303_hi045062201.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(14) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/12900/production/_118123067_faceoff.jpg");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBox:nth-child(15) {
-  background:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://ichef.bbci.co.uk/news/976/cpsprodpb/668A/production/_117605262_hackertwittere-1.png");
-  background-size: cover;
-  width: 175px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.serviceBoxInner {
-  height: 30px;
-  width: 20rem;
+  margin-left: 20%;
+  height: 100vh;
+  width: 60%;
   display: flex;
   justify-content: center;
-  text-align: center;
-  word-break: normal;
-  overflow-wrap: normal;
+  position: relative;
+  align-items: center;
+  // background:rgba(165, 207, 219, 1);
+  border-radius: 1.5rem;
+  z-index: 3;
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
 }
 
-.serviceBoxInner a p {
-  background-color: rgba(0, 0, 0, 0.8);
+
+div.intro {
+  min-width: 400px;
+  color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  
+  h1 {
+    color: whitesmoke;
+    margin-right: 120px;
+    margin-left: 45px;
+    margin-bottom: 60px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    opacity: 0.9;
+  }
+}
+
+div.intro:after {
+  content: "";
+  opacity: 0.2;
+  position: absolute;
+  top: -45rem;
+  left: -22rem;
+  border-radius: 20px;
+  width: 70%;
+  height: 105rem;
+  background: linear-gradient(to top, rgba(200, 69, 200, 80%), transparent);
+  transform: skew(-20deg);
+  z-index: -3;
+}
+
+
+
+div.horizontal-timeline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  // div.opacity-overlay {
+  //    position: absolute;
+  //    height: 460px;
+  //    width: 400px;
+  //    background-image: linear-gradient(
+  //       90deg,
+  //       #ffffff 0%,
+  //       rgba(255, 255, 255, 0) 100%
+  //    );
+  // }
+
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
   border-radius: 5px;
-  padding: 5px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
-  z-index: 10;
-  box-shadow:
-      12px 12px 16px 0 rgba(100, 100, 100, 0.1) inset,
-      -8px -8px 12px 0 rgba(0, 0, 0, .35) inset;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  &:active {
+     cursor: grabbing;
+  }
+
+  &::-webkit-scrollbar {
+     // display: none;
+  }
+  /* width */
+  &::-webkit-scrollbar {
+     // This is the height of the scrollbar.
+     height: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+     // background: #f1f1f1;
+     // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+     background: #C0D5FF;
+     border: 4px solid transparent;
+     background-clip: content-box; /* THIS IS IMPORTANT */
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+     background: #C0D5FF;
+     border-radius: 15px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+     background: #a1a1a1;
+     transition: 0.33s ease all;
+  }
 }
 
-.serviceBoxInner a {
-  text-decoration: none;
+div.dummy {
+  display: inline-block;
+  width: 30px;
+}
+
+div.scroll_card {
+  white-space: normal;
+  display: inline-block;
+  max-width: 300px;
+  margin-right: 30px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow:
+    12px 12px 16px 0 rgba(0.25, 0.25, 0.25, 0.25),
+    -8px -8px 12px 0 rgba(165, 207, 219, 0.1);
+
+  p {
+     font-weight: 300;
+     font-size: 14px;
+     line-height: 20px;
+  }
+  p.date {
+     color: rgba(white, 0.75);
+     font-weight: 700;
+     text-transform: uppercase;
+     font-size: 12px;
+  }
+
+
+  a.learn-more {
+     font-size: 12px;
+     // font-weight: bold;
+     text-decoration: none;
+     // text-transform: uppercase;
+     color: rgba(250,250,250, 0.5);
+  }
+
+  a.learn-more:hover {
+     color: rgba(#ff00a0, 1);
+     transition: 0.33s ease all;
+  }
+  a.link-image {
+     div.image {
+        height: 250px;
+        background-position: center;
+        background-size: cover;
+        background-color: #cdcdcd;
+        margin-bottom: 30px;
+        background-color: rgba(#ff00a0, 0);
+
+        &:hover {
+           background-color: rgba(#C0D5FF, 1);
+           background-blend-mode: luminosity;
+           box-shadow: 4px 4px 8px rgba(250, 250, 250, 0.5);
+           transition: 0.33s ease all;
+        }
+     }
+  }
+
+}
+
+div.scroll_card:last-child {
+  margin-right: 90px;
+  margin-bottom: 60px;
+}
+
+@keyframes fade-in {
+  from {
+     opacity: 0;
+     transform: scale(0.7, 0.7);
+  }
+  to {
+     opacity: 1;
+  }
+}
+.fade-in-element {
+  animation: fade-in 1.4s;
+}
+
+@media screen and (min-height: 960px) {
+  h1 {
+     font-size: 64px;
+     // margin-bottom: 90px;
+  }
+
+  div.scroll_card {
+     div.image {
+        height: 300px;
+     }
+  }
+
+  div.scroll_card:last-child {
+     margin-right: 90px;
+     margin-bottom: 90px;
+  }
 }

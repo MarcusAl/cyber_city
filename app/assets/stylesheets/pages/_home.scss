@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+  margin-top: 80px;
   align-items: center;
   z-index: 3;
 }
@@ -167,6 +168,11 @@ margin-bottom: 10px;
   // background: rgba( 244, 240, 240, 0.15 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
+}
+
+.search-container {
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 .search-container div {

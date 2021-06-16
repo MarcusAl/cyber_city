@@ -36,11 +36,13 @@ import { navScroll } from '../components/init_nav';
 import { myHover } from '../components/myHover';
 import { filterPrice } from '../components/filter';
 import { priceSort } from '../components/price_sort';
+import { initMapbox } from '../plugins/init_mapbox';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
   myHover();
   navScroll();
   priceSort();

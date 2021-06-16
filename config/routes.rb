@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :cart_products, only: :destroy
   resources :diagnostics, only: [:index, :show, :create]
   put '/carts/:id/confirm', to: 'carts#confirm', as: 'confirm_cart'
+  get '/carts/:id/confirm', to: 'carts#order_confirm', as: 'order_confirm'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   get "/pages/try", to: "pages#try"
 end

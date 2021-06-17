@@ -247,7 +247,6 @@ Cart.destroy_all
 Diagnostic.destroy_all
 Product.destroy_all
 User.destroy_all
-Cart.destroy_all
 
 puts "Starting Up..."
 
@@ -407,7 +406,7 @@ end
 
 puts "GDPR Products and Reviews Done"
 
-########################## PCI DSS Compliance  ########################
+########################## Web-App Firewall Compliance  ########################
 
 
 pci1 = Product.create( 
@@ -415,17 +414,28 @@ pci1 = Product.create(
   description: "Splunk is a network traffic analyzer in free and paid versions. The higher versions, Splunk Enterprise, and Splunk Cloud include IPS capabilities. The lower editions are Splunk Free and Splunk Light. The detection procedures of the tool include network traffic monitoring and log file analysis. The detection method searches for anomalies, which are patterns of unexpected behavior.",
   price_cents: 8000,
   user_id: edi.id ,
-  category: "PCI-DSS-Compliance",
+  category: "Web-Application-Firewall",
   )
   file = URI.open("https://i.ytimg.com/vi/jq0wzH84EQI/maxresdefault.jpg")
   pci1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+
+pci0 = Product.create( 
+  name: "Microsoft Azure",
+  description: "Help protect your web apps from malicious attacks and common web vulnerabilities, such as SQL injection and cross-site scripting. With the cloud-native Azure Web Application Firewall (WAF) service, deploy in minutes and only pay for what you use.",
+  price_cents: 2000,
+  user_id: edi.id ,
+  category: "Web-Application-Firewall",
+  )
+  file = URI.open("https://pronto-core-cdn.prontomarketing.com/2/wp-content/uploads/sites/2375/2017/10/baas-page-images-04.png")
+  pci0.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 pci2 = Product.create( 
   name: "Syxsense Manage",
   description: "Syxsense Manage tracks down all of the devices connected to your network and then scans each for its OS version and software inventory. This system documents all OS and software versions on Windows, macOS, and Linux. It can include endpoints on remote sites and it is also able to manage IoT devices.",
   price_cents: 6000,
   user_id: spencer.id ,
-  category: "PCI-DSS-Compliance",
+  category: "Web-Application-Firewall",
   )
   file = URI.open("https://www.syxsense.com/wp-content/uploads/2019/10/Syxsense-Manage-Featured-Image.jpg")
   pci2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -435,7 +445,7 @@ pci3 = Product.create(
   description: "ManageEngine ADAudit Plus is very good for implementing PCI DSS compliance and running audit reports to automatically prove your worthiness. This tool focuses on Active Directory, monitoring, and logging any changes to permissions recorded in AD. It will log user actions entering and exiting different systems. It tracks changes to audit file and folder permissions, which will alert you to intruder activity. You can archive alert data for up to three years and generate audit reports.",
   price_cents: 4000,
   user_id: felix.id ,
-  category: "PCI-DSS-Compliance",
+  category: "Web-Application-Firewall",
   )
   file = URI.open("https://golicense.net/wp-content/uploads/2020/04/manageengine-adaudit-plus-license.jpg")
   pci3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -445,7 +455,7 @@ pci4 = Product.create(
   description: "OSSEC is a free host-based intrusion detection system that features log file analysis and live log message processing. This tool has a great analytical engine, but a terrible front-end. However, there are many free data viewing tools that are compatible with OSSEC, such as Graylog, Splunk, and Kibana.",
   price_cents: 10000,
   user_id: marcus.id ,
-  category: "PCI-DSS-Compliance",
+  category: "Web-Application-Firewall",
   )
   file = URI.open("https://perezbox.com/wp-content/uploads/2018/11/PerezBox-OSSECLogo-745x370.png")
   pci4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -455,7 +465,7 @@ pci5 = Product.create(
   description: "OpenWIPS-NG is made by the same people who produced Aircrack-NG, which is a famous hacker tool. This is a free wireless IPS for Linux. The system has three modules: a sensor, a server, and an interface. The sensor is a packet sniffer that passes network traffic to the server, which is where traffic analysis is performed.",
   price_cents: 5000,
   user_id: edi.id ,
-  category: "PCI-DSS-Compliance",
+  category: "Web-Application-Firewall",
   )
   file = URI.open("https://warehouse-camo.ingress.cmh1.psfhosted.org/9bf63a36cc80de0fb1d0d3d33ed999204e6bb14c/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6f70656e776973702f6f70656e77697370322d646f63732f6d61737465722f6173736574732f64657369676e2f6f70656e776973702d6c6f676f2d626c61636b2e737667")
   pci5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -473,7 +483,17 @@ pci5 = Product.create(
     product_id: product.id)
   end
 
-  puts "PCI Products and Reviews Done"
+  Review.create(user_id: edi.id,
+    content: "Don’t underestimate the importance of WAF. Azure is the perfect product",
+    rating: 5,
+    product_id: pci0.id)
+
+
+  Review.create(user_id: ife.id,
+    content: "Azure WAF is the perfect firewall to keep your clients data secure",
+    rating: 5,
+    product_id: pci0.id)
+  puts "Custom Reviews Done"
   ########################## HTTP Headers Security  ########################
 
 

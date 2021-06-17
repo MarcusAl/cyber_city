@@ -1,7 +1,7 @@
 .diagnostic-card {
     height: 300px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     margin-bottom: 40px;
   }
@@ -10,7 +10,7 @@
     margin: 16px;
     height: 280px;
     width: 280px;
-    border-radius: 8px;
+    border-radius: 4px;
     img {
       max-height: 100%;
       max-width: 100%;
@@ -36,7 +36,7 @@
   .score-main-details {
     height: 450px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     margin-bottom: 50px;
   }
@@ -45,7 +45,7 @@
       margin: 16px;
       height: 400px;
       width: 400px;
-      border-radius: 8px;
+      border-radius: 4px;
       img {
         max-height: 100%;
         max-width: 100%;
@@ -80,7 +80,7 @@
   .green-score {
     background-color: #4aa96c;
     width: 17%;
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 8px;
     margin: 8px;
     .result-content {
@@ -95,7 +95,7 @@
   .yellow-score {
     background-color: #ffcb57;
     width: 17%;
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 8px;
     margin: 8px;
     .result-content {
@@ -110,7 +110,7 @@
   .orange-score {
     background-color: #f7a440;
     width: 17%;
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 8px;
     margin: 8px;
     .result-content {
@@ -125,7 +125,7 @@
   .red-score {
     background-color: #f55c47;
     width: 17%;
-    border-radius: 16px;
+    border-radius: 4px;
     padding: 8px;
     margin: 8px;
     .result-content {

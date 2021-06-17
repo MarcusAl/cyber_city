@@ -30,6 +30,7 @@
   font-family: 'Montserrat', sans-serif;
   padding-bottom: 10px;
   padding-top: 10px;
+  font-size: 16px;
   color: #171c47;
 }
 
@@ -113,12 +114,12 @@
 .products-index-page-card-image {
   max-height: 90%;
   max-width: 40%;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 16px;
   img {
   max-height: 100%;
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   }
 }
 
@@ -135,7 +136,7 @@
 #products-index-price {
   position: absolute;
   bottom: 32px;
-  right: 160px;
+  right: 166px;
   text-decoration: none;
   h6 {
     margin: 0;
@@ -149,7 +150,7 @@
   position: absolute;
   text-decoration: none;
   margin: 0;
-  padding: 8px 16px;
+  padding: 8px 12px;
   background-color: #ffc659;
   color: white;
   bottom: 24px;

@@ -10,11 +10,11 @@
   <div class="score-main-details diagnostic-index">
     <div class="test-image">
       <% if @diagnostic.score >= 90 %>
-        <%= image_tag "https://media.istockphoto.com/vectors/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-ok-vector-id1094780808?k=6&m=1094780808&s=612x612&w=0&h=U_-vy-la7Q8Mz7yzlXV4osQMQk8kY85YPNVpoQZgJX8=", alt: "alttext" %>
+        <%= image_tag "green_check.png", alt: "alttext" %>
       <% elsif @diagnostic.score < 50 %>
-        <%= image_tag "https://t4.ftcdn.net/jpg/00/49/49/71/240_F_49497163_jzhcVIQ7NtHdBvJNFWChCXToIfLRYF57.jpg", alt: "alttext" %>
+        <%= image_tag "red_cross.png", alt: "alttext" %>
       <% else %>
-        <%= image_tag "https://icones.pro/wp-content/uploads/2021/05/symbole-d-avertissement-orange.png", alt: "alttext" %>
+        <%= image_tag "orange_exclamation.png", alt: "alttext" %>
       <% end %>
     </div>
     <div class="test-details">

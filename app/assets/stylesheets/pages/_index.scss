@@ -20,6 +20,9 @@ h5 {
   font-family: 'Nunito', Arial, Helvetica, sans-serif !important;
 }
 
+$cta-color: #1cb36f;
+$cta-hover: #1edd88;
+
 body {
   // background-color: #000;
   // background-color: #101D21;
@@ -53,4 +56,15 @@ main {
 }
 .unset-height {
   height: unset;
+}
+
+.check-btn {
+  background-color: $cta-color;
+  color:white;
+  font-weight:bold;
+  &:hover{
+    background-color: $cta-hover;
+    color:white;
+    font-weight:bold;
+  }
 }

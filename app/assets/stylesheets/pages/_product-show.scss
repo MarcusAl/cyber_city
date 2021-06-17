@@ -1,6 +1,8 @@
+$cta-color: #1cb36f;
+$cta-hover: #1edd88;
+
 .showpage-product-container {
   flex-grow: 1;
-  // background-color: white;
   padding-left: 16px;
   padding-right: 16px;
   color: white !important;
@@ -115,11 +117,12 @@
   text-decoration: none;
   margin: 0;
   // padding: 8px 16px;
-  background-color: #ffc659;
+  background-color: $cta-color;
   color: white;
+  font-weight: bold;
   border-radius: 2px;
   &:hover {
-    background-color: #ffc419;
+    background-color: $cta-hover;
   }
 }
 
@@ -173,6 +176,11 @@ span {
   border-radius: 4px;
 }
 
+.testimonial-box:hover {
+  transform: translateY(-10px);
+  transition: all ease 0.3;
+}
+
 .name-user {
   display: flex;
   flex-direction: column;
@@ -216,22 +224,11 @@ span {
   font-size: 25px;
 }
 
-// .box-top {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-top: 20px;
-// }
-
 .client-comment p {
   font-size: 0.9rem;
   color: #4b4b4b;
 }
 
-.testimonial-box:hover {
-  transform: translateY(-10px);
-  transition: all ease 0.3;
-}
 
 .div-left{
   display:flex;

@@ -1,3 +1,6 @@
+$cta-color: #1cb36f;
+$cta-hover: #1edd88;
+
 #map {
   border-radius: 4px;
 }
@@ -53,17 +56,18 @@
   bottom: 24px;
   right: 42px;
   padding: 8px 16px;
-  background-color: white;
+  background-color: $cta-color;
   margin-top: 5px;
   border-radius: 2px;
-  border: solid 1px #171c47;
+  // border: solid 1px #171c47;
   font-size: 14px;
+  color: white;
+  font-weight: bold;
   font-family: 'Nunito', sans-serif;
-  color: #171c47;
   margin-bottom: 10px;
   transition: 0.3s;
   &:hover {
-    background-color: #171c47;
+    background-color: $cta-hover;
     color: white;
   }
 }
@@ -71,17 +75,18 @@
 .marketplace-diagnostic-button-div {
   text-decoration: none;
   padding: 8px 16px;
-  background-color: white;
+  background-color: $cta-color;
   margin-top: 4px;
   border-radius: 2px;
-  border: solid 1px #171c47;
+  // border: solid 1px #171c47;
   font-size: 14px;
+  color: white;
+  font-weight: bold;
   font-family: 'Nunito', sans-serif;
-  color: #171c47;
   margin-bottom: 10px;
   transition: 0.3s;
   &:hover {
-    background-color: #171c47;
+    background-color: $cta-hover;
     color: white;
   }
 }

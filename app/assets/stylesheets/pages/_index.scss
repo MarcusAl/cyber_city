@@ -61,12 +61,10 @@ main {
 .check-btn {
   background-color: $cta-color;
   color:white;
+  font-weight:bold;
   &:hover{
     background-color: $cta-hover;
     color:white;
+    font-weight:bold;
   }
-}
-
-.boldy {
-  letter-spacing: 1.3px;
 }

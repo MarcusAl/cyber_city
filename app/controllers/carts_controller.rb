@@ -38,7 +38,7 @@ class CartsController < ApplicationController
   def destroy
     @cart = Cart.find(params[:id])
     @cart.destroy!
-    redirect_to products_path, notice: "Cart Destroyed"
+    redirect_to cart_path(@cart), notice: "Cart Destroyed"
   end
   
   def order_confirm

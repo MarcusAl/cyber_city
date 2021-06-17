@@ -33,6 +33,7 @@ $cta-hover: #1edd88;
   font-family: 'Montserrat', sans-serif;
   padding-bottom: 10px;
   padding-top: 10px;
+  font-size: 16px;
   color: #171c47;
 }
 
@@ -116,12 +117,12 @@ $cta-hover: #1edd88;
 .products-index-page-card-image {
   max-height: 90%;
   max-width: 40%;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 16px;
   img {
   max-height: 100%;
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   }
 }
 
@@ -138,7 +139,7 @@ $cta-hover: #1edd88;
 #products-index-price {
   position: absolute;
   bottom: 32px;
-  right: 160px;
+  right: 166px;
   text-decoration: none;
   h6 {
     margin: 0;
@@ -152,8 +153,13 @@ $cta-hover: #1edd88;
   position: absolute;
   text-decoration: none;
   margin: 0;
+<<<<<<< HEAD
   padding: 8px 16px;
   background-color: $cta-color;
+=======
+  padding: 8px 12px;
+  background-color: #ffc659;
+>>>>>>> 2daa528ba223886345cc43187428349f2bec63c8
   color: white;
   font-weight: bold;
   bottom: 24px;

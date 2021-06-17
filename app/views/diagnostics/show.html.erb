@@ -7,7 +7,7 @@
 <%= render 'shared/modals/modal_software' %>
 
 <div class="main-page-diagnostic-container">
-  <div class="score-main-details">
+  <div class="score-main-details diagnostic-index">
     <div class="test-image">
       <% if @diagnostic.score >= 90 %>
         <%= image_tag "https://media.istockphoto.com/vectors/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-ok-vector-id1094780808?k=6&m=1094780808&s=612x612&w=0&h=U_-vy-la7Q8Mz7yzlXV4osQMQk8kY85YPNVpoQZgJX8=", alt: "alttext" %>
@@ -18,12 +18,12 @@
       <% end %>
     </div>
     <div class="test-details">
-      <h2>Summary of <strong><%= @diagnostic.tested_url %></strong> security test.</h2>
-      <p><strong>Grade:</strong> <%= @diagnostic.grade %></p>
-      <p><strong>Score:</strong> <%= @diagnostic.score %>/100</p>
-      <p><strong>Server IP:</strong> <%= @diagnostic.server_ip %></p>
-      <p><strong>Server location:</strong> <%= @diagnostic.server_location %></p>
-      <p><strong>Tested on: </strong> <%= @diagnostic.created_at.strftime(" %d of %B, %Y, at %k:%M") %></p>
+      <h2 class="text-white font-weight-bold">Summary of <strong><%= @diagnostic.tested_url %></strong> security test.</h2>
+      <p class="text-white"><strong>Grade:</strong> <%= @diagnostic.grade %></p>
+      <p class="text-white"><strong>Score:</strong> <%= @diagnostic.score %>/100</p>
+      <p class="text-white"><strong>Server IP:</strong> <%= @diagnostic.server_ip %></p>
+      <p class="text-white"><strong>Server location:</strong> <%= @diagnostic.server_location %></p>
+      <p class="text-white"><strong>Tested on: </strong> <%= @diagnostic.created_at.strftime(" %d of %B, %Y, at %k:%M") %></p>
       <%= link_to 'Marketplace', products_path, class: "btn marketplace-diagnostic-button" %>
     </div>
   </div>

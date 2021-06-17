@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+$cta-color: #1cb36f;
+$cta-hover: #1edd88;
+
 .products-index-container {
   width: 55%;
   flex-grow: 1;
@@ -150,12 +153,13 @@
   text-decoration: none;
   margin: 0;
   padding: 8px 16px;
-  background-color: #ffc659;
+  background-color: $cta-color;
   color: white;
+  font-weight: bold;
   bottom: 24px;
   right: 24px;
   border-radius: 2px;
   &:hover {
-    background-color: #ffc419;
+    background-color: $cta-hover;
   }
 }

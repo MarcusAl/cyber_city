@@ -12,20 +12,20 @@
       <ul class="list-unstyled mt-3">
         <%# <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>
         <div class="d-inline-flex justify-content-between w-100 border-bottom">
-          <li>Product</li>
-          <li>Price</li>
+          <li class="fonty">Product</li>
+          <li class="fonty">Price</li>
         </div>
 
         <%# Loop Through Each Product %>
           <% @cart_products.each do |cart_product| %>
             <div class="d-inline-flex justify-content-between w-100">
-            <li class="my-2"><%= cart_product.product.name %></li>
-            <li class="my-2"><%= link_to "Delete", cart_product_path(cart_product), method: :delete, class: 'text-muted text-decoration-none' %></li>
-            <li class="my-2"><%= humanized_money_with_symbol cart_product.product.price %></li>
+            <li class="my-2 fonty"><%= cart_product.product.name %></li>
+            <li class="my-2 fonty"><%= link_to "Delete", cart_product_path(cart_product), method: :delete, class: 'text-muted text-decoration-none' %></li>
+            <li class="my-2 fonty"><%= humanized_money_with_symbol cart_product.product.price %></li>
             </div>
           <% end %>
 
-        <li class="my-3"><strong>Subtotal:</strong> <%= humanized_money_with_symbol @total %></li>
+        <li class="my-3 fonty"><strong>Subtotal:</strong> <%= humanized_money_with_symbol @total %></li>
       </ul>
       <%# Buttons %>
       <div class="d-flex align-self-start">

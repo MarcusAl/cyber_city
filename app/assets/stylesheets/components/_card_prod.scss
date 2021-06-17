@@ -33,12 +33,15 @@ $cta-hover: #1edd88;
   font-family: 'Montserrat', sans-serif;
   padding-bottom: 10px;
   padding-top: 10px;
-  font-size: 16px;
+  font-size: 18px;
   color: #171c47;
 }
 
 .filter-category-menu {
   margin-left: 10px;
+  p{
+    font-size: 14px;
+  }
 }
 
 .filters {
@@ -133,6 +136,8 @@ $cta-hover: #1edd88;
   p {
     margin-right: 0px;
     width: 90%;
+    font-size: 15px;
+    letter-spacing: 1.1px;
   }
 }
 
@@ -143,9 +148,10 @@ $cta-hover: #1edd88;
   text-decoration: none;
   h6 {
     margin: 0;
-    padding: 2px;
+    padding: 5px;
     color: #454545;
     font-family: 'Montserrat', sans-serif;
+  
   }
 }
 

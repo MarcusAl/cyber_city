@@ -41,8 +41,9 @@ main {
 
 .main-page-container {
   max-width: 77%;
-  height: 90vh;
+  max-height: 90vh;
   margin: 100px auto;
+  margin-bottom: 50px;
   z-index: 20;
   // border: 3px solid red;
   padding: 30px 30px;
@@ -56,6 +57,7 @@ main {
 }
 .unset-height {
   height: unset;
+  max-height: unset;
 }
 
 .check-btn {

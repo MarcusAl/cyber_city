@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name])
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+  
   def set_cart
     if user_signed_in?
       @cart = Cart.find_or_create_by(state: :pending, user: current_user) unless current_user.cart

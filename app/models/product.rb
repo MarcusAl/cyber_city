@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   CATEGORIES = [
     'Software-Security',
     'GDPR-compliance',
-    'PCI-DSS-Compliance',
+    'Web-Application-Firewall',
     'HTTP-Headers-Security',
     'Content-Security-Policy',
     'Others'

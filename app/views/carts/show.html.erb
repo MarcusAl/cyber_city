@@ -20,7 +20,7 @@
           <% @cart_products.each do |cart_product| %>
             <div class="d-inline-flex justify-content-between w-100">
             <li class="my-2"><%= cart_product.product.name %></li>
-            <li class="my-2"><%= link_to "Delete", cart_product_path(cart_product), method: :delete, class: 'text-white text-decoration-none' %></li>
+            <li class="my-2"><%= link_to "Delete", cart_product_path(cart_product), method: :delete, class: 'text-muted text-decoration-none' %></li>
             <li class="my-2"><%= humanized_money_with_symbol cart_product.product.price %></li>
             </div>
           <% end %>

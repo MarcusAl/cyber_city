@@ -1,0 +1,5 @@
+meta_product_name: "Diagnode"
+meta_title: "Diagnode - Your Cyber Security Analyzer and Marketplace"
+meta_description: "An online vulnerability scanner that finds cyber security weaknesses in your digital infrastructure, to avoid costly data breaches."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@diagnode_twitter_account"   # required for Twitter Cards

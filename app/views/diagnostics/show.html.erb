@@ -19,6 +19,7 @@
     </div>
     <div class="test-details">
       <h2 class="text-white">Summary of <strong><%= @diagnostic.tested_url %></strong> security test.</h2>
+      <br>
       <p class="text-white"><strong>Grade:</strong> <%= @diagnostic.grade %></p>
       <p class="text-white"><strong>Score:</strong> <%= @diagnostic.score %>/100</p>
       <p class="text-white"><strong>Server IP:</strong> <%= @diagnostic.server_ip %></p>
@@ -39,7 +40,7 @@
 
 
     <div class="<%= @diagnostic.pci_dss_scores_colour %>-score cursor" data-toggle="modal" data-target="#exampleModal1">
-      <p><strong>PCI DSS Compliance</strong></p>
+      <p><strong>Web Application Firewall</strong></p>
       <i class="fas fa-clipboard-list"></i>
       <div class="result-content">
         <p><%= @diagnostic.pci_dss_scores_description %> </p>

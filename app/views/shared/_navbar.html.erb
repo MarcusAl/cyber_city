@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
       <li class="nav-item dropdown">
           <%= link_to "/carts/#{Cart.where(user: current_user).sort.last.id}" do %>
-            <i class="fa fa-shopping-cart my-nav-cart nav-link dropdown-toggle text-white-50"></i>
+            <i class="fa fa-shopping-cart my-nav-cart nav-link text-white-50"></i>
           <% end %>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% current_user.cart.cart_products.each do |product| %>
@@ -34,7 +34,7 @@
         </li>
       <% else %>
         <%= link_to 'carts/user_id' do %>
-            <i class="fa fa-shopping-cart my-nav-cart nav-link dropdown-toggle text-white-50"></i>
+            <i class="fa fa-shopping-cart my-nav-cart nav-link text-white-50"></i>
           <% end %>
         <li class="nav-item">
           <%= link_to "Marketplace", "/products", class: "nav-link text-white-50" %>

@@ -17,7 +17,7 @@
    </div>
 
     <div class="showpage-product-page-card-content">
-      <h2 class="showpage-hd"><%= @product.name %></h2>
+      <h2 class="showpage-hd"><%= @product.name.capitalize %></h2>
       <p><strong>Category:</strong> <%= @product.category %></p>
       <h4 class="showpage-product-price"><strong>£<%= @product.price %></strong></h4>
       <p class="showpage-des"><%= @product.description %></p>

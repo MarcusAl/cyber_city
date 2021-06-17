@@ -5,7 +5,7 @@
     <div class="col">
       <h1 class="text-white light-border-bottom py-2 mb-5 w-50">Checkout summary</h1>
       <% @cart.products.each do |product| %>
-        <div class="d-inline-flex my-1 w-75 align-items-center h-75 light-border p-4">
+        <div class="d-inline-flex my-1 w-100 align-items-center h-50 light-border p-4">
           <p class="text-white m-0 p-0">Purchase of <strong><%= product.name %></strong></p>
           <p class="m-0 p-0"><strong><%= humanized_money_with_symbol product.price %></strong></p>
           <% if product.photos.attached? %>
@@ -19,7 +19,7 @@
       <% end %>
       <div>
       <p><strong>Total:<%= humanized_money_with_symbol @total %></strong></p>
-      <p class="text-success"><strong>Voucher codes will be emailed directly after checkout</strong></p>
+      <p class="text-white-50 font-weight-bold">Voucher codes will be emailed directly after checkout</p>
       <button id="pay" class="btn btn-warning">Pay</button>
       </div>
       <script src="https://js.stripe.com/v3/"></script>

@@ -45,7 +45,7 @@
                               <p><%= product.description.first(150)%>... </p>
                             </div>
                             <a href="/products/<%=product.id %>" id="products-index-price"><h6><strong>£<%= product.price %></strong></h6></a>
-                            <%= link_to "Add product",  product_cart_products_path(product.id), method: :post, class: "button cart-btn", id: "products-index-add" %>
+                            <%= link_to "Add to Basket",  product_cart_products_path(product.id), method: :post, class: "button cart-btn", id: "products-index-add" %>
                         </div>
                 </div>
             <% end %>

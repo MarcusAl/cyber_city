@@ -1,7 +1,7 @@
 .footer {
-  padding: 32px;
+  padding: 15px;
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   height: 150px;
   bottom: 0;
@@ -10,7 +10,7 @@
   border-top: solid 1px white;
   background-color: black;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 200;
 
   .fab {
@@ -26,4 +26,9 @@
 
 .min-h {
   min-height: calc(100vh - 178px);
+}
+
+.footer_links a:hover {
+  color: white !important;
+  transition: 600ms;
 }

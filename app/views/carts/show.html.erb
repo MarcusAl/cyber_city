@@ -5,9 +5,9 @@
     <%# <div class="col-md-3"><%= image_tag @order.teddy.photo_url, width: '100%' %>
     <div class="col">
       <% if @cart.state == "pending" %>
-          <h1 class="text-white py-3">Shopping Basket <small><span class="badge text-white-50 badge-success ml-3"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+          <h1 class="text-white py-3">Shopping Basket</h1>
       <% else %>
-          <h1 class="text-white py-3">Shopping Basket <small><span class="badge text-white badge-secondary ml-3"><%= "#{@cart.products.length} #{@cart.state} items"%></span></small></h1>
+          <h1 class="text-white py-3">Shopping Basket <small><span class="badge text-white ml-3"></span></small></h1>
       <% end %>
       <ul class="list-unstyled mt-3">
         <%# <li><strong>ISSUED ON</strong> <%= @cart.created_at.to_date.strftime("%m/%d/%Y") %></li>

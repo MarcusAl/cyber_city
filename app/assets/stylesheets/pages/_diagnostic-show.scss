@@ -61,9 +61,9 @@ $cta-hover: #1edd88;
   border-radius: 2px;
   // border: solid 1px #171c47;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
   color: white;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
   margin-bottom: 10px;
   transition: 0.3s;
   &:hover {
@@ -80,9 +80,9 @@ $cta-hover: #1edd88;
   border-radius: 2px;
   // border: solid 1px #171c47;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
   color: white;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
   margin-bottom: 10px;
   transition: 0.3s;
   &:hover {
@@ -147,7 +147,7 @@ $cta-hover: #1edd88;
   }
   p {
     color: black;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 }
 
@@ -184,7 +184,7 @@ $cta-hover: #1edd88;
     color: black;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px white;
     padding-bottom: 16px;
     margin-right: 32px;
     text-align: left;
@@ -192,7 +192,7 @@ $cta-hover: #1edd88;
   p {
     text-align: left;
     color: black;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 }
 

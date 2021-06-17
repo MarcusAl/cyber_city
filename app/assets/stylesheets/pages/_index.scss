@@ -42,4 +42,15 @@ main {
   height: unset;
 }
 
+.check-btn {
+  background-color: $cta-color;
+  color:white;
+  &:hover{
+    background-color: $cta-hover;
+    color:white;
+  }
+}
 
+.boldy {
+  letter-spacing: 1.3px;
+}

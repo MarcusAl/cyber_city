@@ -6,7 +6,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/marcusal/cyber_city?/main?style=for-the-badge)
 
 
-# Project - Diagnode CyberSecurity Marketplace
+# Diagnode CyberSecurity Marketplace
 
 
 ### View in browser

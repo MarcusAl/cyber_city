@@ -13,7 +13,7 @@
 [Live](http://www.diagnode.co.uk/)
 
 ### Screenshot
-![Screenshot](Screenshot 2021-06-17 at 15.38.38.png)
+<img align="center" alt="Screenshot" height="400px" src="Screenshot 2021-06-17 at 15.38.38.png"/>
 
 ## Built With
 

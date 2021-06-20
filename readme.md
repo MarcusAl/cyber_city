@@ -3,7 +3,7 @@
 ![Followers](https://img.shields.io/github/followers/marcusal?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/marcusal?style=for-the-badge)
 ![Pull Requests](https://img.shields.io/github/issues-pr/marcusal/cyber_city?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/marcusal/cyber_city/main?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/marcusal/cyber_city?/main?style=for-the-badge)
 
 
 # Project - Diagnode CyberSecurity Marketplace
@@ -13,7 +13,7 @@
 [Live](http://www.diagnode.co.uk/)
 
 ### Screenshot
-![Screenshot](./screenshot.png)
+![Screenshot](Screenshot 2021-06-17 at 15.38.38.png)
 
 ## Built With
 
